@@ -1,0 +1,1 @@
+# Cambiar los GameName para tener solo juegos
