@@ -54,7 +54,7 @@ ___________.__             ____________________________          __________     
         <div className = "Footer">
             {/* 
                             |-----------------------------------------------------------|<-here startds de footer
-                            Maybe the read me file and a donation button (no se preocupen de ese lado, yo de eso me encargare en el futuro)
+                            Maybe the README file and a donation button (no se preocupen de ese lado, yo de eso me encargare en el futuro)
 
             */}
         </div>
