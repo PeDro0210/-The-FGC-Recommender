@@ -1,7 +1,7 @@
 
 
 
-function QuestionBox() {
+export function QuestionBox() {
 
 
     return (
@@ -37,5 +37,3 @@ function QuestionBox() {
         </> 
     )
 }
-
-export default QuestionBox;
