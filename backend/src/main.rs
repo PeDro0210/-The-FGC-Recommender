@@ -1,5 +1,4 @@
 use actix_web::{get, App, HttpResponse, HttpServer, Responder};
-use neo4rs::*;
 
 //Boiler Plate code
 #[get("/")]
