@@ -5,7 +5,6 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-// Need to redirect to the components in the Pages directory
 root.render(
   <React.StrictMode>
     <App />
