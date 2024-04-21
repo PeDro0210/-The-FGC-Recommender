@@ -2,7 +2,7 @@
 
 
 
-export default function ResultsPage() {
+export default function ResultsContainer() {
     return (
         <>
         
