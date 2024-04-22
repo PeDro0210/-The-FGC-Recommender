@@ -1,5 +1,5 @@
 
-export function ImageBox({image, NumberOfImage, ProportionOfTheBox}) {
+export function ImageBox({image, NumberOfImage, TypeOfBox}) {//the TypeOfBox is to differentiate between game box and character box
 
     return (
         <>
