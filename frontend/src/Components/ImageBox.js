@@ -4,9 +4,11 @@
  * 
  * @param {image} image - The image that will be displayed in the box
  * @param {NumberOfImage} NumberOfImage - The number of the image that is being displayed (by category)
+ * @param {Name} Name - The name of the image that is being displayed (Game name or character name)
  * @param {TypeOfBox} TypeOfBox - The type of box that is being displayed (game box or character box)
  */
-export function ImageBox({image, NumberOfImage, TypeOfBox}) {//the TypeOfBox is to differentiate between game box and character box
+
+export function ImageBox({image, NumberOfImage, Name, TypeOfBox}) {//the TypeOfBox is to differentiate between game box and character box
 
     return (
         <>

@@ -1,12 +1,12 @@
 
 export function Questions() {    
-    // JSON object that contains the questions and the category that gives points to (CON LA CANTIDAD DE PUNTOS QUE DA)
+    // JSON object that will contain the categories and the points that it gives to that category
     let QuestionCategories = {"Category":[],"Points":[]}
 
-    /*
-    Function that adds the points to the category that the question corresponds to or removes the points if the the question is de-selected
-    @param (Category) - String that contains the category that the question corresponds to
-    @param (Points) - Integer that contains the points that the question corresponds to
+    /**
+    * Function that adds the points to the category that the question corresponds to or removes the points if the the question is de-selected
+    * @param (Category) - String that contains the category that the question corresponds to
+    * @param (Points) - Integer that contains the points that the question corresponds to
     */
 
     const PointAdder = (Category) => {
