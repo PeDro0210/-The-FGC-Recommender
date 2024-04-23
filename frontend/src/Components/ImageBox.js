@@ -1,4 +1,11 @@
 
+
+/**
+ * 
+ * @param {image} image - The image that will be displayed in the box
+ * @param {NumberOfImage} NumberOfImage - The number of the image that is being displayed (by category)
+ * @param {TypeOfBox} TypeOfBox - The type of box that is being displayed (game box or character box)
+ */
 export function ImageBox({image, NumberOfImage, TypeOfBox}) {//the TypeOfBox is to differentiate between game box and character box
 
     return (
@@ -26,7 +33,7 @@ export function ImageBox({image, NumberOfImage, TypeOfBox}) {//the TypeOfBox is 
         
         */}
 
-        <img src={image} alt = {NumberOfImage}/> {/* The image will be centered and will be 75% of the box*/}
+        <img src={image} alt = {"Image"+NumberOfImage}/> {/* The image will be centered and will be 75% of the box*/}
 
 
         </div>
