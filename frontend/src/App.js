@@ -1,7 +1,7 @@
 
 
 
-export function App() {
+function App() {
 
   return (
       <>
@@ -52,3 +52,5 @@ ___________.__             ____________________________          __________     
       </>
   )
 }
+
+export default App;
