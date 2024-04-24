@@ -1,17 +1,17 @@
 #[derive(serde::Serialize)]
-struct Character{
-    name : String,
-    image_url: String
+pub struct Character{
+    pub name : String,
+    pub image_url: String
 }
 
 #[derive(serde::Serialize)]
-struct Questions{
-    list_of_quetions : Vec<String>,
-    list_of_answers : Vec<String>
+pub struct Questions{
+    pub list_of_quetions : Vec<String>,
+    pub list_of_answers : Vec<String>
 }
 
 #[derive(serde::Serialize)]
-struct Game{
-    name : String,
-    image_url: String
+pub struct Game{
+    pub name : String,
+    pub image_url: String
 }
