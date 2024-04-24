@@ -3,6 +3,7 @@ use actix_web::{get, Responder, web};
 use crate::api::query_manager::*;
 use crate::api::queries_structs_endpoint::*;
 
+// In charge of parsing the HTTP requests and sending the responses
 
 #[get("/GetQuestions")]
 // Function that sends Json objects of questions
