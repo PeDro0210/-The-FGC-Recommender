@@ -1,8 +1,5 @@
 use actix_web::{get, Responder, web, HttpResponse};
-use actix_web::dev::Handler;
 
-use crate::api::query_manager::*;
-use crate::api::queries_structs_endpoint::*;
 
 // In charge of parsing the HTTP requests and sending the responses
 
