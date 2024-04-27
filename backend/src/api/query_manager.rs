@@ -14,8 +14,17 @@ pub async fn start_driver() -> Graph  { //returns the driver
     let password = var("NEO4J_PASSWORD").expect("NEO4J_PASSWORD must be set");
     let driver = Graph::new(uri, user, password).await.unwrap_or_else(|_| panic!("Could not connect to the database"));
 
-    return driver;
+    { 
+        assert!(driver.run(query("RETURN 1")).await.is_ok());
     
+        let mut result = driver
+            .execute(
+                query("CREATE (friend:Person {name: $name}) RETURN friend").param("name", "Mr Mark"),
+            )
+            .await
+            .unwrap();
+    return driver;
+    }
 }
 
 fn hasher_function(categories: Vec<String>) -> String {
@@ -34,26 +43,31 @@ fn hasher_function(categories: Vec<String>) -> String {
 pub async fn user_node_creation(categories: Vec<String>) -> User {
     let graph = start_driver().await;
 
-    let categories_for_map = categories.clone();
-    let userhash = "sex".to_string() + &hasher_function(categories.clone());
+    let categories_for_hash = categories.clone();
+    let userhash = "U".to_string() + &hasher_function(categories.clone());
+    let userhash_iter = userhash.clone();
 
-    let mut result = graph.execute(query("CREATE (u:User {name: $name}) RETURN u").param("name", "U".to_string() + &userhash))
+
+    let mut result = graph.execute(query("CREATE (u:User {name: $name}) RETURN u").param("name", userhash))
         .await.unwrap();
-    
+
+
+    let _ = result.next().await; //best line of code ever invented
+
     for category in categories {
-        print!("User hash in loop: {:?}", userhash);
-        let result = graph.execute(query("
+        let mut result = graph.execute(query("
         MERGE (u:User {name: $name}) 
         MERGE (category1:Label {name: $category})
         MERGE (u)-[:Likes]->(category1)
         RETURN u, category1
         ")
-            .param("name",  "U".to_string() + &userhash)
+            .param("name",  userhash_iter.clone())
             .param("category", category))
             .await.unwrap();
+        let _ = result.next().await;
     }
 
-    return User{userhash: hasher_function(categories_for_map.clone()), categories: categories_for_map};
+    return User{userhash: hasher_function(categories_for_hash.clone())};
 
 }
 

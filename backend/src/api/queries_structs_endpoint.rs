@@ -20,5 +20,4 @@ pub struct Game{
 #[derive(Debug)]
 pub struct User{
     pub userhash : String,
-    pub categories: Vec<String>
 }
