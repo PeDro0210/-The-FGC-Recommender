@@ -16,3 +16,13 @@ async function GamesFetcher(categories) {
   const data = await response.json();
   return data;
 }
+
+async function GameFetcher(gameID, Arhetypes) {
+  Query = "http://localhost:3001/GetGame/?game_name=" + gameID + "&archetype=";
+  for (let i = 0; i < Arhetypes.length; i++) {
+    Query = Query + Arhetypes[i] + "&" +"archetype="
+  }
+  const response = await fetch(Query);
+  const data = await response.json();
+  return data;
+}

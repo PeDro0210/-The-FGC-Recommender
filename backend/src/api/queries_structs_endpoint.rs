@@ -15,3 +15,8 @@ pub struct Game{
     pub name : String,
     pub image_url: String
 }
+
+#[derive(serde::Serialize)]
+pub struct User{
+    pub name : String,
+}
