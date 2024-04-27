@@ -17,6 +17,8 @@ pub struct Game{
 }
 
 #[derive(serde::Serialize)]
+#[derive(Debug)]
 pub struct User{
-    pub name : String,
+    pub userhash : String,
+    pub categories: Vec<String>
 }

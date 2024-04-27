@@ -1,18 +1,61 @@
 use actix_web::web::Json;
+use neo4rs::{query, Graph};
 use crate::api::queries_structs_endpoint::*;
+use std::env:: {var,vars};
+use std::hash::{self, Hasher, Hash};
+use dotenv::dotenv;
+use std::time::{SystemTime, UNIX_EPOCH};
 
 
-// fn start_driver() -> neo4rs::Graph  { //returns the driver
-//     //TODO: Create a connection to the database
+pub async fn start_driver() -> Graph  { //returns the driver
+    dotenv().ok();
+    let uri = var("NEO4J_URI").unwrap();
+    let user = var("NEO4J_USERNAME").expect("NEO4J_USER must be set");
+    let password = var("NEO4J_PASSWORD").expect("NEO4J_PASSWORD must be set");
+    let driver = Graph::new(uri, user, password).await.unwrap_or_else(|_| panic!("Could not connect to the database"));
+
+    return driver;
     
-// }
-
-// creates a user node in the database that is has a Like relationship with the categories
-async fn user_node_creation(categories:Vec<String>) -> User {
-    // TODO: Implement the logic to create a user node in the database with the categories
-    return User{name: "user_name".to_string()};
 }
 
+fn hasher_function(categories: Vec<String>) -> String {
+    let mut hasher = hash::DefaultHasher::new(); // Create a new hasher
+    // Hash the categories concatenated
+    let current_time = SystemTime::now().duration_since(UNIX_EPOCH).unwrap().as_secs();
+    for category in categories {
+        category.hash(&mut hasher);
+    }
+    current_time.hash(&mut hasher);
+    let hash_value = hasher.finish();
+    return hash_value.to_string();
+}
+
+// creates a user node in the database that is has a Like relationship with the categories
+pub async fn user_node_creation(categories: Vec<String>) -> User {
+    let graph = start_driver().await;
+
+    let categories_for_map = categories.clone();
+    let userhash = "sex".to_string() + &hasher_function(categories.clone());
+
+    let mut result = graph.execute(query("CREATE (u:User {name: $name}) RETURN u").param("name", "U".to_string() + &userhash))
+        .await.unwrap();
+    
+    for category in categories {
+        print!("User hash in loop: {:?}", userhash);
+        let result = graph.execute(query("
+        MERGE (u:User {name: $name}) 
+        MERGE (category1:Label {name: $category})
+        MERGE (u)-[:Likes]->(category1)
+        RETURN u, category1
+        ")
+            .param("name",  "U".to_string() + &userhash)
+            .param("category", category))
+            .await.unwrap();
+    }
+
+    return User{userhash: hasher_function(categories_for_map.clone()), categories: categories_for_map};
+
+}
 
 // Makes a query for content-based filtering using jaccard similarity with the created user node
 // TODO: see if Json works out of the box

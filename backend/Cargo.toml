@@ -10,3 +10,15 @@ actix-web = "4"
 neo4rs = "0.7.1"
 tokio = { version = "1", features = ["full"] }
 serde = { version = "1.0", features = ["derive"] }
+dotenv = "0.15.0"
+
+[[test]]
+name = "backendfgc_test"
+path = "src/tests.rs"
+
+[env]
+NEO4J_URI="neo4j+s://012e963c.databases.neo4j.io"
+NEO4J_USERNAME="neo4j"
+NEO4J_PASSWORD="PKVnh0dUiUbzg81K1fVSnbhZteT46rfNDEIU5mSPypo"
+AURA_INSTANCEID="012e963c"
+AURA_INSTANCENAME="Instance01"
