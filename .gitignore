@@ -7,4 +7,4 @@ Index.js
 ReportWebVitals.js
 frontend/src/API
 frontend/src/components/QuestionBox.js
-frontend/src/Pages/ResultsContainer.js
+frontend/src/Pages/QuestionsContainer.js
