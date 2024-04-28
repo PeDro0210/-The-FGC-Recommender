@@ -43,7 +43,7 @@ ___________.__             ____________________________          __________     
 
       <div className = "Footer">
           {/* 
-                                    |-----------------------------------------------------------|<-here startds de footer
+                                    |-----------------------------------------------------------|<-here starts de footer
                                     Maybe the README file and a donation button (no se preocupen de ese lado, yo de eso me encargare en el futuro)
 
           */}

@@ -2,13 +2,13 @@
 
 // This is just boilerplate code that I will use to fetch the questions from the back-end
 async function QuestionFetcher() {
-  const response = await fetch('http://localhost:3001/questions');
+  const response = await fetch('http://localhost:3001/questions'); //the URL is not correct, I will change it later
   const data = await response.json();
   return data;
 }
 
 async function GamesFetcher(categories) {
-  Query = "http://localhost:3001/GetGames/?categories="
+  Query = "http://localhost:3001/GetGames/?categories=" //the URL is not correct, I will change it later
   for (let i = 0; i < categories.length; i++) {
     Query = Query + categories[i] + "&" +"categories="
   }
@@ -18,7 +18,7 @@ async function GamesFetcher(categories) {
 }
 
 async function GameFetcher(gameID, Arhetypes) {
-  Query = "http://localhost:3001/GetGame/?game_name=" + gameID + "&archetype=";
+  Query = "http://localhost:3001/GetGame/?game_name=" + gameID + "&archetype="; //the URL is not correct, I will change it later
   for (let i = 0; i < Arhetypes.length; i++) {
     Query = Query + Arhetypes[i] + "&" +"archetype="
   }
