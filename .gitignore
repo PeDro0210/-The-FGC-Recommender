@@ -1,3 +1,10 @@
 frontend/node_modules
 backend/target
+backend/
 *.env
+App.js
+Index.js
+ReportWebVitals.js
+frontend/src/API
+frontend/src/components/QuestionBox.js
+frontend/src/Pages/ResultsContainer.js
