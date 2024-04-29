@@ -1,7 +1,7 @@
 use actix_web::web::Json;
 use neo4rs::{query, Graph};
 use crate::api::queries_structs_endpoint::*;
-use std::env:: {var,vars};
+use std::env:: var;
 use std::hash::{self, Hasher, Hash};
 use dotenv::dotenv;
 use std::time::{SystemTime, UNIX_EPOCH};
@@ -14,17 +14,7 @@ pub async fn start_driver() -> Graph  { //returns the driver
     let password = var("NEO4J_PASSWORD").expect("NEO4J_PASSWORD must be set");
     let driver = Graph::new(uri, user, password).await.unwrap_or_else(|_| panic!("Could not connect to the database"));
 
-    { 
-        assert!(driver.run(query("RETURN 1")).await.is_ok());
-    
-        let mut result = driver
-            .execute(
-                query("CREATE (friend:Person {name: $name}) RETURN friend").param("name", "Mr Mark"),
-            )
-            .await
-            .unwrap();
     return driver;
-    }
 }
 
 fn hasher_function(categories: Vec<String>) -> String {
@@ -51,9 +41,11 @@ pub async fn user_node_creation(categories: Vec<String>) -> User {
     let mut result = graph.execute(query("CREATE (u:User {name: $name}) RETURN u").param("name", userhash))
         .await.unwrap();
 
+    let _ = result.next().await; //best line of code ever fucking invented
 
-    let _ = result.next().await; //best line of code ever invented
 
+    // TODO: optimize later for sending it as one query
+    // But not now, when everything is done optimize it 
     for category in categories {
         let mut result = graph.execute(query("
         MERGE (u:User {name: $name}) 
@@ -73,15 +65,9 @@ pub async fn user_node_creation(categories: Vec<String>) -> User {
 
 // Makes a query for content-based filtering using jaccard similarity with the created user node
 // TODO: see if Json works out of the box
-async fn jaccard_similarity_query() -> Json<Game> { //returns the games
+async fn jaccard_similarity_query() -> Json<Vec<Game>> { //returns the games
     // TODO: Implement the query logic here
-    return Json(Game{name: "game_name".to_string(), image_url: "image_url".to_string()});
-}
-
-// Fetches the questions from the database
-async fn get_questions() -> Json<Questions> { //returns the questions
-// TODO: Fetch the questions from the node Questions with there answears and category for each answears.
-    return Json(Questions{list_of_quetions: vec!["question1".to_string(), "question2".to_string()], list_of_answers: vec!["answer1".to_string(), "answer2".to_string()]});
+    return Json(vec![Game{name: "game_name".to_string(), image_url: "image_url".to_string()}]);
 }
 
 // Fetches the characters from the DB based on the game name and archetype
