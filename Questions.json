@@ -1,0 +1,25 @@
+{
+    "Questions":[
+        {
+            "question1":"Como te gusta que se jueguen tus juegos de peleas?",
+            "answears1":[
+                {
+                    "answear":"En el aire principalmente",
+                    "categories/archetypes":["CrossOver","2D","Anime","Fast-paced", "AirDashers"]
+                },
+                {
+                    "answear":"En el suelo un poco mas pausado, centrado en el 'neutral' y el 'footsies'",
+                    "categories/archetypes":["2D","3D","Footsies","SlowPaced"]
+                },
+                {
+                    "answear":"En un entorno el cual me pueda mover bastante tridiemensionalmente",
+                    "points":["3D","Footsies"]
+                },
+                {
+                    "answear":"Que se bastante pausado para poder lanzar ese golpe definitivo",
+                    "points":["3D","SlowPaced","WeaponBased","Footsies"]
+                }
+            ]
+        }
+    ]
+}
