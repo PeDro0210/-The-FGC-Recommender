@@ -1,5 +1,5 @@
-
-
+import React from 'react';
+import "../styles/Questions/QuestionContainer.css";
 export function Questions() {    
     // JSON object that will contain the categories and the points that it gives to that category
     let QuestionCategories = {"Category":["dick"],"Points":[0]}
@@ -21,8 +21,8 @@ export function Questions() {
     return (
         
 
-        <div>
-            <h1>FJakdsjha</h1>
+        <div className='Questions-box'>
+            <h1>WIP</h1>
             {/* 
                                     |-----------------------------------------------------------|<-here ends the header                                     
                                     |                                                           | 

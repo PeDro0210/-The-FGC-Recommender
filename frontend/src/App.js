@@ -1,5 +1,6 @@
 import React from 'react';
 import "../src/styles/app.css";
+import { Questions } from './Pages/QuestionsContainer';
 
 function App() {
 
@@ -36,7 +37,7 @@ ___________.__             ____________________________          __________     
       </div>
 
       <div className="Content">
-          <h1>WIP</h1>
+          <Questions/>{/*This is how you instanciate a component*/} 
           
           {/* 
           // Color of the content: Dark gray
