@@ -1,3 +1,4 @@
+import '.../Styles/questions/Question.css'
 
 /**
  * 
@@ -15,11 +16,11 @@
 
 
 export function QuestionBox({Answear, PointsAdder, Question}) {
-
+    
     return (
         <>
         <div className = "Question">
-
+            <Question>FUCK OFF</Question>
             {/*
             Example
             |===========================================================|

@@ -1,12 +1,15 @@
-
-
+import React from 'react';
+import "../src/styles/app.css";
 
 function App() {
 
   return (
-      <>
+      <div className = "main-content">
       
-      <div className="Header">
+      <div className="Header-one">
+            <div className="rounded-box">
+                <h1>The FGC Recommender</h1>
+            </div>
           {/*
           Possible structure
           // Color of the header: Dark gray
@@ -33,6 +36,8 @@ ___________.__             ____________________________          __________     
       </div>
 
       <div className="Content">
+          <h1>WIP</h1>
+          
           {/* 
           // Color of the content: Dark gray
           
@@ -41,7 +46,8 @@ ___________.__             ____________________________          __________     
           */}
       </div>
 
-      <div className = "Footer">
+      <div className = "Footer-one">
+          <h1>idunno what to add here RN NGL</h1>
           {/* 
                                     |-----------------------------------------------------------|<-here starts de footer
                                     Maybe the README file and a donation button (no se preocupen de ese lado, yo de eso me encargare en el futuro)
@@ -49,7 +55,7 @@ ___________.__             ____________________________          __________     
           */}
       </div>
       
-      </>
+      </div>
   )
 }
 

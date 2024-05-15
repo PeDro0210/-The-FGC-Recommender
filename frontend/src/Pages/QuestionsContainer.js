@@ -1,7 +1,8 @@
 
+
 export function Questions() {    
     // JSON object that will contain the categories and the points that it gives to that category
-    let QuestionCategories = {"Category":[],"Points":[]}
+    let QuestionCategories = {"Category":["dick"],"Points":[0]}
 
     /**
     * Function that adds the points to the category that the question corresponds to or removes the points if the the question is de-selected
@@ -18,9 +19,10 @@ export function Questions() {
     // TODO: make a submit button that will return all the QuestionCategories once all questions are answered to the ResultReciever, to be send to the react backend
     
     return (
-        <>
+        
 
-        <div className="Questions">
+        <div>
+            <h1>FJakdsjha</h1>
             {/* 
                                     |-----------------------------------------------------------|<-here ends the header                                     
                                     |                                                           | 
@@ -39,10 +41,12 @@ export function Questions() {
                                     |                                                           | <- and keeps going until the footer
                                     |-----------------------------------------------------------| <- and here goes the footer
             
-            */}
+            */
+            
+            }
+            
         </div>
         
-        </>
     )
 }
 
