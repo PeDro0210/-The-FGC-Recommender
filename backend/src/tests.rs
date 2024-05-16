@@ -23,7 +23,7 @@ async fn creating_node(){
 
 #[tokio::test]
 async fn trying_jaccard(){
-    let categories:Vec<String> = vec!["TagTeam".to_string()];
+    let categories:Vec<String> = vec!["3D".to_string()];
     let jaccard = api::query_manager::get_games(categories).await;
     print!("{:?}", jaccard);
     assert_ne!("genericHash".to_string(), ""); // just for the test to run

@@ -68,12 +68,13 @@ pub async fn user_node_creation(categories: Vec<String>) -> String {
 
 // Makes a query for content-based filtering using jaccard similarity with the created user node
 // * public for testing
-// ! Change when testing done
-pub async fn jaccard_similarity_query(userhash: String) -> Row {
+// TODO: Change when testing done
+pub async fn jaccard_similarity_query(userhash: String) -> Vec<HashMap<String, String>>  {
     let graph = start_driver().await;
-
+    let mut game_vec = Vec::new();
     
-    let mut games = graph.execute(query("MATCH (User{name:$user})-[:LIKES]->(l:Label)<-[:BELONGS_TO]-(j:Reconode)
+    // Fuck this big ass query (bromis te amo)
+    let mut games = graph.execute(query("MATCH (User{name:$user})-[:LIKES]->(l:Label)<-[:BELONGS_TO]-(j:Reconode) 
     WITH collect(DISTINCT j.name) AS JuegosUsuario1  
     
     MATCH (u2:User)-[:LIKES]->(:Label)<-[:BELONGS_TO]-(j2:Reconode)
@@ -99,23 +100,33 @@ pub async fn jaccard_similarity_query(userhash: String) -> Row {
     RETURN game")
     .param("user", userhash))
     .await.unwrap();
-
-    let result = games.next().await.unwrap().unwrap();
-
-    return result;
+    
+    loop {
+        // Calls the next game (dunno why it works like that, but OK)
+        let mut result = games.next().await.unwrap(); //I know this is mutable, but fuckint rust-analyzer doesnt say so
+        match result {
+            Some(result) => {
+                let game = result.get::<HashMap<String, String>>("game").unwrap(); // unwraps the games
+                game_vec.push(game);
+            },
+            None => break,
+        }
+    }
+    return game_vec;
 
 }
+
 
 pub async fn get_games(categories: Vec<String>) -> Vec<Game> {
     let userhash = user_node_creation(categories).await;
     let games = jaccard_similarity_query(userhash).await;
-
-    let mut games_vec: Vec<Game> = Vec::new();
-    games.get::<HashMap<String, String>>("game").into_iter().for_each(|game| {
-        games_vec.push(Game{name: game.get("name").unwrap().to_string(), image_url: "image_url".to_string()});
-    });
- 
     
+    let mut games_vec: Vec<Game> = Vec::new();
+
+    for game in games {
+        games_vec.push(Game{name: game.get("name").unwrap().to_string(), image_url: "image_url".to_string()});
+    }
+ 
     return games_vec;
 }
 // Fetches the characters from the DB based on the game name and archetype
