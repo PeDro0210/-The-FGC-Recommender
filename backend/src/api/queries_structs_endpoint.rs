@@ -4,6 +4,7 @@ pub struct Character{
     pub image_url: String
 }
 
+// TODO: see how to structure this Json
 #[derive(serde::Serialize)]
 pub struct Questions{
     pub list_of_quetions : Vec<String>,
@@ -11,13 +12,9 @@ pub struct Questions{
 }
 
 #[derive(serde::Serialize)]
+#[derive(Debug)]
 pub struct Game{
     pub name : String,
     pub image_url: String
 }
 
-#[derive(serde::Serialize)]
-#[derive(Debug)]
-pub struct User{
-    pub userhash : String,
-}

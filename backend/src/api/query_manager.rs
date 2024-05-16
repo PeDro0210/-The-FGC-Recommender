@@ -1,10 +1,11 @@
 use actix_web::web::Json;
-use neo4rs::{query, Graph};
+use neo4rs::{query, Graph, Row};
 use crate::api::queries_structs_endpoint::*;
 use std::env:: var;
 use std::hash::{self, Hasher, Hash};
 use dotenv::dotenv;
 use std::time::{SystemTime, UNIX_EPOCH};
+use std::collections::HashMap;
 
 
 pub async fn start_driver() -> Graph  { //returns the driver
@@ -30,11 +31,14 @@ fn hasher_function(categories: Vec<String>) -> String {
 }
 
 // creates a user node in the database that is has a Like relationship with the categories
-pub async fn user_node_creation(categories: Vec<String>) -> User {
+// * the function is public for testing purposes
+// TODO: Change the function to private when done testing
+pub async fn user_node_creation(categories: Vec<String>) -> String {
     let graph = start_driver().await;
 
-    let categories_for_hash = categories.clone();
+
     let userhash = "U".to_string() + &hasher_function(categories.clone());
+    let returning_userhash:String = userhash.clone();
     let userhash_iter = userhash.clone();
 
 
@@ -44,13 +48,12 @@ pub async fn user_node_creation(categories: Vec<String>) -> User {
     let _ = result.next().await; //best line of code ever fucking invented
 
 
-    // TODO: optimize later for sending it as one query
-    // But not now, when everything is done optimize it 
+    // TODO: optimize later for sending it as one query. But not now, when everything is done optimize it 
     for category in categories {
         let mut result = graph.execute(query("
         MERGE (u:User {name: $name}) 
         MERGE (category1:Label {name: $category})
-        MERGE (u)-[:Likes]->(category1)
+        MERGE (u)-[:LIKES]->(category1)
         RETURN u, category1
         ")
             .param("name",  userhash_iter.clone())
@@ -59,19 +62,64 @@ pub async fn user_node_creation(categories: Vec<String>) -> User {
         let _ = result.next().await;
     }
 
-    return User{userhash: hasher_function(categories_for_hash.clone())};
+    return returning_userhash;
 
 }
 
 // Makes a query for content-based filtering using jaccard similarity with the created user node
-// TODO: see if Json works out of the box
-async fn jaccard_similarity_query() -> Json<Vec<Game>> { //returns the games
-    // TODO: Implement the query logic here
-    return Json(vec![Game{name: "game_name".to_string(), image_url: "image_url".to_string()}]);
+// * public for testing
+// ! Change when testing done
+pub async fn jaccard_similarity_query(userhash: String) -> Row {
+    let graph = start_driver().await;
+
+    
+    let mut games = graph.execute(query("MATCH (User{name:$user})-[:LIKES]->(l:Label)<-[:BELONGS_TO]-(j:Reconode)
+    WITH collect(DISTINCT j.name) AS JuegosUsuario1  
+    
+    MATCH (u2:User)-[:LIKES]->(:Label)<-[:BELONGS_TO]-(j2:Reconode)
+    WITH u2, JuegosUsuario1, collect(DISTINCT j2.name) AS JuegosUsuario2
+    
+    WITH u2, JuegosUsuario1, JuegosUsuario2,
+         size(apoc.coll.intersection(JuegosUsuario1, JuegosUsuario2)) AS intersection,
+         size(apoc.coll.union(JuegosUsuario1, JuegosUsuario2)) AS union,
+         size(JuegosUsuario1) AS size1,
+         size(JuegosUsuario2) AS size2
+    
+    WITH u2, JuegosUsuario1, JuegosUsuario2,
+         intersection, union, size1, size2,
+         intersection * 1.0 / union AS jaccard
+    WHERE jaccard > 0.90
+    
+    WITH collect(JuegosUsuario2) AS AllJuegosUsuario2
+    
+    WITH reduce(s = [], x IN AllJuegosUsuario2 | s + x) AS UnionJuegosUsuario2
+    
+    MATCH (game:Reconode)
+    WHERE game.name IN UnionJuegosUsuario2
+    RETURN game")
+    .param("user", userhash))
+    .await.unwrap();
+
+    let result = games.next().await.unwrap().unwrap();
+
+    return result;
+
 }
 
+pub async fn get_games(categories: Vec<String>) -> Vec<Game> {
+    let userhash = user_node_creation(categories).await;
+    let games = jaccard_similarity_query(userhash).await;
+
+    let mut games_vec: Vec<Game> = Vec::new();
+    games.get::<HashMap<String, String>>("game").into_iter().for_each(|game| {
+        games_vec.push(Game{name: game.get("name").unwrap().to_string(), image_url: "image_url".to_string()});
+    });
+ 
+    
+    return games_vec;
+}
 // Fetches the characters from the DB based on the game name and archetype
-async fn get_characters_from_game(game_name: String, arhetype: Vec<String>) -> Json<Character> { //returns the characters
+pub async fn get_characters_from_game(game_name: String, arhetype: Vec<String>) -> Json<Character> { //returns the characters
 // TODO: Fetch the characters from the DB based on the game name and archetype
     return Json(Character{name: "character_name".to_string(), image_url: "image_url".to_string()});
 }
