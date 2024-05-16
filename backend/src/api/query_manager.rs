@@ -1,5 +1,5 @@
 use actix_web::web::Json;
-use neo4rs::{query, Graph, Row};
+use neo4rs::{query, Graph};
 use crate::api::queries_structs_endpoint::*;
 use std::env:: var;
 use std::hash::{self, Hasher, Hash};
@@ -116,19 +116,21 @@ pub async fn jaccard_similarity_query(userhash: String) -> Vec<HashMap<String, S
 
 }
 
-
+// Gets the games (like it ain't rocket science)
 pub async fn get_games(categories: Vec<String>) -> Vec<Game> {
     let userhash = user_node_creation(categories).await;
     let games = jaccard_similarity_query(userhash).await;
     
     let mut games_vec: Vec<Game> = Vec::new();
 
+    // Unoptimized as shit, but it works
     for game in games {
         games_vec.push(Game{name: game.get("name").unwrap().to_string(), image_url: "image_url".to_string()});
     }
  
     return games_vec;
 }
+
 // Fetches the characters from the DB based on the game name and archetype
 pub async fn get_characters_from_game(game_name: String, arhetype: Vec<String>) -> Json<Character> { //returns the characters
 // TODO: Fetch the characters from the DB based on the game name and archetype

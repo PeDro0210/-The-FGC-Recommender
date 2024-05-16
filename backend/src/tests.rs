@@ -1,7 +1,5 @@
-use tokio::test;
 mod api;
-use crate::api::query_manager::*;
-use neo4rs::{query};
+use neo4rs::query;
 
 
 // TODO: FIX TESTS
