@@ -258,6 +258,7 @@ dependencies = [
  "dotenv",
  "neo4rs",
  "serde",
+ "serde_json",
  "tokio",
 ]
 

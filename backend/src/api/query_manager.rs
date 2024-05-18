@@ -10,7 +10,6 @@ use std::time::{SystemTime, UNIX_EPOCH};
 use std::collections::HashMap;
 
 
-// TODO: Reorginize files structure
 
 
 pub async fn start_driver() -> Graph  { //returns the driver
@@ -25,8 +24,7 @@ pub async fn start_driver() -> Graph  { //returns the driver
 
 // creates a user node in the database that is has a Like relationship with the categories
 // * the function is public for testing purposes
-// TODO: Change the function to private when done testing
-pub async fn user_node_creation(categories: Vec<String>) -> String {
+async fn user_node_creation(categories: Vec<String>) -> String {
     let graph = start_driver().await;
 
 
@@ -42,18 +40,19 @@ pub async fn user_node_creation(categories: Vec<String>) -> String {
 
 
     // TODO: optimize later for sending it as one query. But not now, when everything is done optimize it 
-    for category in categories {
-        let mut result = graph.execute(query("
-        MERGE (u:User {name: $name}) 
-        MERGE (category1:Label {name: $category})
-        MERGE (u)-[:LIKES]->(category1)
-        RETURN u, category1
-        ")
-            .param("name",  userhash_iter.clone())
-            .param("category", category))
-            .await.unwrap();
-        let _ = result.next().await;
-    }
+    let mut result = graph.execute(query("
+    WITH $categories AS categories
+    MERGE (u:User {name: $name})
+    WITH u, categories
+    UNWIND categories AS category
+    MERGE (category1:Label {name: category})
+    MERGE (u)-[:LIKES]->(category1)
+    RETURN u, collect(category1) AS categories
+    ")
+        .param("name",  userhash_iter.clone())
+        .param("categories", categories))
+        .await.unwrap();
+    let _ = result.next().await;
 
     return returning_userhash;
 
@@ -61,8 +60,7 @@ pub async fn user_node_creation(categories: Vec<String>) -> String {
 
 // Makes a query for content-based filtering using jaccard similarity with the created user node
 // * public for testing
-// TODO: Change when testing done
-pub async fn jaccard_similarity_query(userhash: String) -> Vec<Game>  {
+async fn jaccard_similarity_query(userhash: String) -> Vec<Game>  {
     let graph = start_driver().await;
     let mut game_vec = Vec::new();
     
@@ -102,7 +100,7 @@ pub async fn jaccard_similarity_query(userhash: String) -> Vec<Game>  {
                 let game = result.get::<HashMap<String, String>>("game").unwrap(); // unwraps the games
                 let game_parsed = Game{
                     name: game.get("name").unwrap().to_string(), 
-                    image_url: "image_url".to_string()
+                    image_url: game.get("image_link").unwrap().to_string()
                 };
                 game_vec.push(game_parsed);
             },

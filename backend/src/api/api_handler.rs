@@ -1,13 +1,16 @@
 use actix_web::{get, web::{self, Json}, HttpResponse, Responder};
+use serde_json::Value;
 use crate::api::query_manager;
 use crate::api::utils::queries_structs_endpoint::{Game, Character};
-
+use crate::api::questions_manager::question_reader::read_schema;
 // In charge of parsing the HTTP requests and sending the responses
 
 #[get("/GetQuestions")]
 pub async fn question_sender() -> impl Responder {
-    //TODO: return a JSON with the structure of the questions
-    HttpResponse::Ok().body("Question Sender")
+    let questions = read_schema("src/api/questions_manager/Questions.json").unwrap();
+    let questions_json:Json<Value> = Json(questions);
+
+    HttpResponse::Ok().json(questions_json)
 }
 
 // when calling the HTTP request, the user will have to pass the categories as a list of strings in this way
