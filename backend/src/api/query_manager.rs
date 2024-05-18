@@ -62,7 +62,7 @@ pub async fn user_node_creation(categories: Vec<String>) -> String {
 // Makes a query for content-based filtering using jaccard similarity with the created user node
 // * public for testing
 // TODO: Change when testing done
-pub async fn jaccard_similarity_query(userhash: String) -> Vec<HashMap<String, String>>  {
+pub async fn jaccard_similarity_query(userhash: String) -> Vec<Game>  {
     let graph = start_driver().await;
     let mut game_vec = Vec::new();
     
@@ -82,7 +82,7 @@ pub async fn jaccard_similarity_query(userhash: String) -> Vec<HashMap<String, S
     WITH u2, JuegosUsuario1, JuegosUsuario2,
          intersection, union, size1, size2,
          intersection * 1.0 / union AS jaccard
-    WHERE jaccard > 0.90
+    WHERE jaccard > 0.75
     
     WITH collect(JuegosUsuario2) AS AllJuegosUsuario2
     
@@ -96,11 +96,15 @@ pub async fn jaccard_similarity_query(userhash: String) -> Vec<HashMap<String, S
     
     loop {
         // Calls the next game (dunno why it works like that, but OK)
-        let mut result = games.next().await.unwrap(); //I know this is mutable, but fuckint rust-analyzer doesnt say so
+        let result = games.next().await.unwrap(); //I know this is mutable, but fuckint rust-analyzer doesnt say so
         match result {
             Some(result) => {
                 let game = result.get::<HashMap<String, String>>("game").unwrap(); // unwraps the games
-                game_vec.push(game);
+                let game_parsed = Game{
+                    name: game.get("name").unwrap().to_string(), 
+                    image_url: "image_url".to_string()
+                };
+                game_vec.push(game_parsed);
             },
             None => break,
         }
@@ -130,7 +134,7 @@ pub async fn fetching_characters(game_name: String, archetypes: Vec<String>) -> 
 
         loop {
             // Calls the next game (dunno why it works like that, but OK)
-            let mut result = result.next().await.unwrap(); //I know this is mutable, but fucking rust-analyzer doesnt say so
+            let result = result.next().await.unwrap(); //I know this is mutable, but fucking rust-analyzer doesnt say so
             match result {
                 Some(result) => {
                     let character = Character {
@@ -150,16 +154,7 @@ pub async fn fetching_characters(game_name: String, archetypes: Vec<String>) -> 
 // Gets the games (like it ain't rocket science)
 pub async fn get_games(categories: Vec<String>) -> Vec<Game> {
     let userhash = user_node_creation(categories).await;
-    let games = jaccard_similarity_query(userhash).await;
-    
-    let mut games_vec: Vec<Game> = Vec::new();
-
-    // Unoptimized as shit, but it works
-    for game in games {
-        games_vec.push(Game{name: game.get("name").unwrap().to_string(), image_url: "image_url".to_string()});
-    }
- 
-    return games_vec;
+    return jaccard_similarity_query(userhash).await
 }
 
 // Gets the characters for a certain game
