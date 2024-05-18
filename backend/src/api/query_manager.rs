@@ -114,27 +114,18 @@ pub async fn jaccard_similarity_query(userhash: String) -> Vec<HashMap<String, S
 pub async fn fetching_characters(game_name: String, archetypes: Vec<String>) -> Vec<Character> { //returns vec of characters
 
     let graph = start_driver().await;
-    let mut archetype_string = String::new();
     let mut character_vec:Vec<Character> = Vec::new();
 
-    // Optimize this shit with a map function
-    for archetype in archetypes{
-        if archetype_string.is_empty(){
-            archetype_string.push_str(&format!("{}",archetype))
-        }
-        else{
-            archetype_string.push_str(&format!(",{}", archetype));
-        }
-    }
+
 
     // TODO: Make that to accept a vector of archetypes instead of one
     let mut result = graph.execute(query("
     MATCH (u:Character)-[:From]->(t:Reconode{name:$game})
-    WHERE ANY(archetype IN u.archetypes WHERE archetype = $archetypes)
+    WHERE ANY(archetype IN u.archetypes WHERE archetype IN $archetypes)
     RETURN u.name, u.image_link
         ")
         .param("game",game_name)
-        .param("archetypes",archetype_string))
+        .param("archetypes",archetypes))
         .await.unwrap();
 
         loop {
