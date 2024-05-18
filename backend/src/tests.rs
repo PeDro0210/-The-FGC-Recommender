@@ -21,8 +21,17 @@ async fn creating_node(){
 
 #[tokio::test]
 async fn trying_jaccard(){
-    let categories:Vec<String> = vec!["3D".to_string()];
+    let categories:Vec<String> = vec!["3D".to_string(),"Footsies".to_string(),"Action".to_string()];
     let jaccard = api::query_manager::get_games(categories).await;
     print!("{:?}", jaccard);
+    assert_ne!("genericHash".to_string(), ""); // just for the test to run
+}
+
+#[tokio::test]
+async fn trying_get_characters(){
+    let game_name = "Tekken 7".to_string();
+    let archetypes:Vec<String> = vec!["Mishima".to_string()];
+    let characters = api::query_manager::get_characters(game_name, archetypes).await;
+    print!("{:?}", characters);
     assert_ne!("genericHash".to_string(), ""); // just for the test to run
 }

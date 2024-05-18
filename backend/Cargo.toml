@@ -13,6 +13,8 @@ serde = { version = "1.0", features = ["derive"] }
 dotenv = "0.15.0"
 
 [[test]]
-name = "backendfgc_test"
+name = "queries_test"
 path = "src/tests.rs"
+
+
 

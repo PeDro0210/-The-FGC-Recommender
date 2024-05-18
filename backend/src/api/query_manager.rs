@@ -1,11 +1,16 @@
-use actix_web::web::Json;
+
+use crate::api::utils::queries_structs_endpoint::*;
+use crate::api::utils::hasher::hasher_function;
+
 use neo4rs::{query, Graph};
-use crate::api::queries_structs_endpoint::*;
 use std::env:: var;
 use std::hash::{self, Hasher, Hash};
 use dotenv::dotenv;
 use std::time::{SystemTime, UNIX_EPOCH};
 use std::collections::HashMap;
+
+
+// TODO: Reorginize files structure
 
 
 pub async fn start_driver() -> Graph  { //returns the driver
@@ -16,18 +21,6 @@ pub async fn start_driver() -> Graph  { //returns the driver
     let driver = Graph::new(uri, user, password).await.unwrap_or_else(|_| panic!("Could not connect to the database"));
 
     return driver;
-}
-
-fn hasher_function(categories: Vec<String>) -> String {
-    let mut hasher = hash::DefaultHasher::new(); // Create a new hasher
-    // Hash the categories concatenated
-    let current_time = SystemTime::now().duration_since(UNIX_EPOCH).unwrap().as_secs();
-    for category in categories {
-        category.hash(&mut hasher);
-    }
-    current_time.hash(&mut hasher);
-    let hash_value = hasher.finish();
-    return hash_value.to_string();
 }
 
 // creates a user node in the database that is has a Like relationship with the categories
@@ -116,6 +109,53 @@ pub async fn jaccard_similarity_query(userhash: String) -> Vec<HashMap<String, S
 
 }
 
+// Fetches the characters from the DB based on the game name and archetype
+// TODO: comment this
+pub async fn fetching_characters(game_name: String, archetypes: Vec<String>) -> Vec<Character> { //returns vec of characters
+
+    let graph = start_driver().await;
+    let mut archetype_string = String::new();
+    let mut character_vec:Vec<Character> = Vec::new();
+
+    // Optimize this shit with a map function
+    for archetype in archetypes{
+        if archetype_string.is_empty(){
+            archetype_string.push_str(&format!("{}",archetype))
+        }
+        else{
+            archetype_string.push_str(&format!(",{}", archetype));
+        }
+    }
+
+    // TODO: Make that to accept a vector of archetypes instead of one
+    let mut result = graph.execute(query("
+    MATCH (u:Character)-[:From]->(t:Reconode{name:$game})
+    WHERE ANY(archetype IN u.archetypes WHERE archetype = $archetypes)
+    RETURN u.name, u.image_link
+        ")
+        .param("game",game_name)
+        .param("archetypes",archetype_string))
+        .await.unwrap();
+
+        loop {
+            // Calls the next game (dunno why it works like that, but OK)
+            let mut result = result.next().await.unwrap(); //I know this is mutable, but fucking rust-analyzer doesnt say so
+            match result {
+                Some(result) => {
+                    let character = Character {
+                        name: result.get::<String>("u.name").unwrap(),
+                        image_url: result.get::<String>("u.image_link").unwrap(),
+                    };
+                    character_vec.push(character);
+                },
+                None => break,
+            }
+        }
+
+    return character_vec
+}
+
+// TODO: Change this two functions to another file
 // Gets the games (like it ain't rocket science)
 pub async fn get_games(categories: Vec<String>) -> Vec<Game> {
     let userhash = user_node_creation(categories).await;
@@ -131,8 +171,7 @@ pub async fn get_games(categories: Vec<String>) -> Vec<Game> {
     return games_vec;
 }
 
-// Fetches the characters from the DB based on the game name and archetype
-pub async fn get_characters_from_game(game_name: String, arhetype: Vec<String>) -> Json<Character> { //returns the characters
-// TODO: Fetch the characters from the DB based on the game name and archetype
-    return Json(Character{name: "character_name".to_string(), image_url: "image_url".to_string()});
+// Gets the characters for a certain game
+pub async fn get_characters(game_name: String, arhetypes: Vec<String>) -> Vec<Character> {;
+    return fetching_characters(game_name,arhetypes).await;
 }
