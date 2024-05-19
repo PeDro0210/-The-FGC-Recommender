@@ -4,9 +4,7 @@ use crate::api::utils::hasher::hasher_function;
 
 use neo4rs::{query, Graph};
 use std::env:: var;
-use std::hash::{self, Hasher, Hash};
 use dotenv::dotenv;
-use std::time::{SystemTime, UNIX_EPOCH};
 use std::collections::HashMap;
 
 
@@ -39,7 +37,6 @@ async fn user_node_creation(categories: Vec<String>) -> String {
     let _ = result.next().await; //best line of code ever fucking invented
 
 
-    // TODO: optimize later for sending it as one query. But not now, when everything is done optimize it 
     let mut result = graph.execute(query("
     WITH $categories AS categories
     MERGE (u:User {name: $name})
@@ -65,7 +62,9 @@ async fn jaccard_similarity_query(userhash: String) -> Vec<Game>  {
     let mut game_vec = Vec::new();
     
     // Fuck this big ass query (bromis te amo)
-    let mut games = graph.execute(query("MATCH (User{name:$user})-[:LIKES]->(l:Label)<-[:BELONGS_TO]-(j:Reconode) 
+    // The query in the nutshell returns all the game of the set of users that have a jaccard coeffiecient over 75%
+    let mut games = graph.execute(query
+    ("MATCH (User{name:$user})-[:LIKES]->(l:Label)<-[:BELONGS_TO]-(j:Reconode) 
     WITH collect(DISTINCT j.name) AS JuegosUsuario1  
     
     MATCH (u2:User)-[:LIKES]->(:Label)<-[:BELONGS_TO]-(j2:Reconode)
@@ -98,6 +97,7 @@ async fn jaccard_similarity_query(userhash: String) -> Vec<Game>  {
         match result {
             Some(result) => {
                 let game = result.get::<HashMap<String, String>>("game").unwrap(); // unwraps the games
+                // Object structure for characters, with there keys for getting the info
                 let game_parsed = Game{
                     name: game.get("name").unwrap().to_string(), 
                     image_url: game.get("image_link").unwrap().to_string()
@@ -114,13 +114,11 @@ async fn jaccard_similarity_query(userhash: String) -> Vec<Game>  {
 // Fetches the characters from the DB based on the game name and archetype
 // TODO: comment this
 pub async fn fetching_characters(game_name: String, archetypes: Vec<String>) -> Vec<Character> { //returns vec of characters
-
     let graph = start_driver().await;
     let mut character_vec:Vec<Character> = Vec::new();
 
-
-
-    // TODO: Make that to accept a vector of archetypes instead of one
+    // Simple ass query
+    // Is just to simple to over explain
     let mut result = graph.execute(query("
     MATCH (u:Character)-[:From]->(t:Reconode{name:$game})
     WHERE ANY(archetype IN u.archetypes WHERE archetype IN $archetypes)
@@ -135,6 +133,7 @@ pub async fn fetching_characters(game_name: String, archetypes: Vec<String>) -> 
             let result = result.next().await.unwrap(); //I know this is mutable, but fucking rust-analyzer doesnt say so
             match result {
                 Some(result) => {
+                    // Object structure for characters, with there keys for getting the info
                     let character = Character {
                         name: result.get::<String>("u.name").unwrap(),
                         image_url: result.get::<String>("u.image_link").unwrap(),
@@ -148,7 +147,7 @@ pub async fn fetching_characters(game_name: String, archetypes: Vec<String>) -> 
     return character_vec
 }
 
-// TODO: Change this two functions to another file
+
 // Gets the games (like it ain't rocket science)
 pub async fn get_games(categories: Vec<String>) -> Vec<Game> {
     let userhash = user_node_creation(categories).await;
