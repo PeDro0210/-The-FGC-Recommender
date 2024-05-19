@@ -1,4 +1,4 @@
-import '.../Styles/questions/Question.css'
+
 
 /**
  * 
@@ -18,7 +18,7 @@ import '.../Styles/questions/Question.css'
 export function QuestionBox({Answear, PointsAdder, Question}) {
     
     return (
-        <>
+        <div>
         <div className = "Question">
             {/*
             Example
@@ -46,6 +46,6 @@ export function QuestionBox({Answear, PointsAdder, Question}) {
             */}
 
         </div>
-        </> 
+        </div> 
     )
 }

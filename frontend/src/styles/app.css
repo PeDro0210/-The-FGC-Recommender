@@ -1,4 +1,3 @@
-
 /* TODO: comment this shit later */
 .main-content {
 	text-align: center;
@@ -10,6 +9,23 @@
     background-color: #262335;
 }
 
+@font-face {
+  font-family: 'street_fighter_alpha_3_mediRg';
+  src: url('/public/Fonts/street-fighter-alpha-3-medium-webfont.woff2') format('woff2'),
+       url('/public/Fonts/street-fighter-alpha-3-medium-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+@font-face {
+  font-family: 'starbirlregular';
+  src: url('/public/Fonts/starbirl-webfont.woff2') format('woff2'),
+       url('/public/Fonts/starbirl-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+
+}
 
 .Header-one {
     padding: 10vw;
@@ -33,8 +49,8 @@
         opacity: 1;
         position: relative;
         top: 25%;
+        font: 900 2.5vw "starbirlregular";
         color: white;
-        font: 900 2.5vw Starbirl;
         outline: blue;
         text-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
       }
@@ -131,6 +147,7 @@
 }
 
 
+/* See how to make that the fonts download automatically */
 .Footer-one{
     padding: 10vw;
     position: relative;
@@ -142,10 +159,8 @@
         opacity: 1;
         position: relative;
         color: white;
-        font: 900 2.5vw "Street Fighter Alpha 3 (Medium)";
+        font: 900 2.5vw "street_fighter_alpha_3_mediRg";
         outline: blue;
         text-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
     }
 }
-
-
