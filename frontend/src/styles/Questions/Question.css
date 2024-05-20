@@ -1,0 +1,12 @@
+.Question{
+    text-transform: capitalize;
+    text-shadow: 2px 2px 5px #008891;
+    font: 900 2.5vw Starbirl;
+    color: #E7E7DE;
+}
+
+.Question hr{
+    height: 4px;
+    width: 90%;
+    background-color: #008891;
+}

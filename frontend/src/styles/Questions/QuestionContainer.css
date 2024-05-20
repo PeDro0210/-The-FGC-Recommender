@@ -1,6 +1,15 @@
 
 /* Just for brandon to start working */
+
+
 .Questions-box{
+    border-radius: 3%;
+    background-color: #79A3B1;
     width: 75%;
-    margin: 0 auto;
-}
+    height: 35%;
+    border: 5px solid #79A3B1;
+    margin: auto;
+}   
+
+
+
