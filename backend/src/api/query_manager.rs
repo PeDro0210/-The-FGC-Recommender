@@ -79,7 +79,7 @@ async fn jaccard_similarity_query(userhash: String) -> Vec<Game>  {
     WITH u2, JuegosUsuario1, JuegosUsuario2,
          intersection, union, size1, size2,
          intersection * 1.0 / union AS jaccard
-    WHERE jaccard > 0.75
+    WHERE jaccard > 0.95
     
     WITH collect(JuegosUsuario2) AS AllJuegosUsuario2
     
