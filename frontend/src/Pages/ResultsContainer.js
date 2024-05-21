@@ -1,7 +1,6 @@
-// src/Components/ResultsContainer.js
 import React from 'react';
 import Slider from 'react-slick';
-import { ImageBox } from '../Components/ImageBox'; // Asegúrate de que la ruta es correcta
+import { ImageBox } from '../Components/ImageBox';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
@@ -41,18 +40,22 @@ const ResultsContainer = ({ games }) => {
                         <img src={game.image_url} alt={game.name} className="cover-image" />
                         <p className="game-name">{game.name}</p>
                     </div>
-                    <Slider {...sliderSettings}>
-                        {game.characters.map((character, charIndex) => (
-                            <div key={charIndex}>
-                                <ImageBox
-                                    image={character.image_url}
-                                    NumberOfImage={charIndex + 1}
-                                    Name={character.name}
-                                    Size={'100%'}
-                                />
-                            </div>
-                        ))}
-                    </Slider>
+                    {game.characters.length > 0 ? (
+                        <Slider {...sliderSettings}>
+                            {game.characters.map((character, charIndex) => (
+                                <div key={charIndex}>
+                                    <ImageBox
+                                        image={character.image_url}
+                                        NumberOfImage={charIndex + 1}
+                                        Name={character.name}
+                                        Size={'60%'}
+                                    />
+                                </div>
+                            ))}
+                        </Slider>
+                    ) : (
+                        <p>No hay personajes para este juego</p>
+                    )}
                 </div>
             ))}
         </div>

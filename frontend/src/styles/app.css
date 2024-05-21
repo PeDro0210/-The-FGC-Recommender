@@ -10,19 +10,19 @@
 }
 
 @font-face {
-font-family: 'street_fighter_alpha_3_mediRg';
-src: url('/public/Fonts/street-fighter-alpha-3-medium-webfont.woff2') format('woff2'),
-     url('/public/Fonts/street-fighter-alpha-3-medium-webfont.woff') format('woff');
-font-weight: normal;
-font-style: normal;
+  font-family: 'street_fighter_alpha_3_mediRg';
+  src: url('/public/Fonts/street-fighter-alpha-3-medium-webfont.woff2') format('woff2'),
+       url('/public/Fonts/street-fighter-alpha-3-medium-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
 }
 
 @font-face {
-font-family: 'starbirlregular';
-src: url('/public/Fonts/starbirl-webfont.woff2') format('woff2'),
-     url('/public/Fonts/starbirl-webfont.woff') format('woff');
-font-weight: normal;
-font-style: normal;
+  font-family: 'starbirlregular';
+  src: url('/public/Fonts/starbirl-webfont.woff2') format('woff2'),
+       url('/public/Fonts/starbirl-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
 }
 
 .Header-one {
@@ -166,7 +166,7 @@ font-style: normal;
 /* ImageBox Styles */
 
 .Content {
-  background-color: #d0e8f2;
+  background-color: #d0e8f200;
   padding: 1rem;
 }
 
@@ -174,47 +174,48 @@ font-style: normal;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  width: 60%;
 }
 
 .image-container {
   position: relative;
-  width: 20%;
+  width: 90%;
+  height: 80%;
   padding-bottom: 1%;
-  background-color: #fcf8ec;
+  background: linear-gradient(45deg, #242327, #241c25); /* Transparent background similar to the main content background color */
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
   box-sizing: border-box;
-  border: 6px solid #79a3b1;
   margin: 1rem;
 }
 
 .image-container img {
-  max-width: 100%;
-  max-height: 100%;
+  max-width: 70%;
   object-fit: contain;
 }
 
 .name-container {
   text-align: center;
   margin-top: 0.5rem;
-  background-color: #d0e8f2;
-  padding: 0.5rem;
-  border-radius: 10px;
-  width: 100%;
+  background: linear-gradient(45deg, #220a8f, #a310ae); /* Gradient similar to the main content background color */
+  padding: 0.002rem;
+  border-radius: 20px;
+  width: 99%;
 }
 
 .name {
   font-family: inherit;
   font-size: 1rem;
-  color: #000000;
+  color: #ffffff;
+  text-align: center;
 }
 
 /* Responsive adjustments */
 @media (max-width: 1200px) {
   .image-container {
-      width: 30%;
+      width: 50%;
   }
 }
 
@@ -228,4 +229,55 @@ font-style: normal;
   .image-container {
       width: 90%;
   }
+}
+
+/* ResultsContainer Styles */
+.results-container {
+  padding: 2rem;
+  background-color: #50349e25;
+}
+
+.game-container {
+  margin-bottom: 2rem;
+}
+
+.cover-container {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.cover-image {
+  width: 20%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+.game-name {
+  font-size: 1.5rem;
+  color: #ffffff;
+  margin-top: 0.5rem;
+  background: linear-gradient(45deg, #be444a, #4a030c);
+  border-spacing: 60px;
+}
+
+.slick-slide > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.slick-slide img {
+  width: 100%;
+  height: auto;
+  max-width: 200px;
+  max-height: 200px;
+}
+
+.slick-dots li button:before {
+  color: #333;
+}
+
+.slick-prev, .slick-next {
+  color: #333;
 }
