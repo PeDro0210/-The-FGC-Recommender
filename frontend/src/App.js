@@ -1,71 +1,37 @@
+// src/App.js
 import React from 'react';
 import "../src/styles/app.css";
-import { ImageBox } from '../src/Components/ImageBox'; // Asegúrate de que la ruta es correcta
-import Slider from 'react-slick';
-import "slick-carousel/slick/slick.css"; 
-import "slick-carousel/slick/slick-theme.css";
-import ResultsContainer from './Pages/ResultsContainer';
+import ResultsContainer from '../src/Pages/ResultsContainer'; // Asegúrate de que la ruta es correcta
 
-const listOfGames = [
-    {"name":"Street Fighter V Champion Edition","image_url":"WIP"},
-    {"name":"Street Fighter VI","image_url":"WIP"}
+const games = [
+  {
+    name: "Tekken 7",
+    image_url: "https://media.discordapp.net/attachments/1239767599986905149/1239767960240001136/4yfeeKKfJdD5WzDQsoiM3xrcqPlpDLm7.jpeg?ex=664e02a3&is=664cb123&hm=3a57c37102cbea0855c03119d27872d8c77d0b24f1fe8bad47e0adaf67343e39&=&format=webp",
+    characters: [
+      { name: "Kazuya", image_url: "https://media.discordapp.net/attachments/1239767599986905149/1240321229110378536/Kazuya_1.png?ex=664e0ba9&is=664cba29&hm=9af97a2d0d46a6cef2b0997648a73a5681e07f38c2a1bc904f34fd01013ea3d4&=&format=webp&quality=lossless" },
+      { name: "Heihachi", image_url: "https://media.discordapp.net/attachments/1239767599986905149/1240319142851248179/Heihachi.jpg?ex=664e09b7&is=664cb837&hm=6081977d46030e8b8d127b94c4bcdecbc5365a6cc501352bbf7828fb7a9b4a61&=&format=webp" },
+
+    ]
+  },
+
 ];
 
-const userArchetypes = ["Mishima"]; // Ejemplo de arquetipos
-
-
 function App() {
-    
     return (
         <div className="main-content">
             <div className="Header-one">
                 <div className="rounded-box">
                     <h1>The FGC Recommender</h1>
                 </div>
-                {/*
-                Possible structure
-                // Color of the header: Dark gray
-                // Color of the logo: burgundy
-                // 
-    __________.__             ____________________________          __________                                                       .___            
-    \__    ___/|  |__   ____   \_   _____/  _____/\_   ___ \         \______   \ ____   ____  ____   _____   _____   ____   ____    __| _/___________   |
-    |    |   |  |  \_/ __ \   |    __)/   \  ___/    \  \/   ______ |       _// __ \_/ ___\/  _ \ /     \ /     \_/ __ \ /    \  / __ |/ __ \_  __ \    |
-    |    |   |   Y  \  ___/   |     \ \    \_\  \     \____ /_____/ |    |   \  ___/\  \__(  <_> )  Y Y  \  Y Y  \  ___/|   |  \/ /_/ \  ___/|  | \/    | <- this ascii logo is a place holder
-    |____|   |___|  /\___  >  \___  /  \______  /\______  /         |____|_  /\___  >\___  >____/|__|_|  /__|_|  /\___  >___|  /\____ |\___  >__|       |   
-                  \/     \/       \/          \/        \/                 \/     \/     \/            \/      \/     \/      \/    \/           |
-                                        |-----------------------------------------------------------|<-here ends the header                             |
-                                        |                                                           |                                                   | <- limit of the page
-                                        |                                                           | 
-                                        |                                                           | 
-                                        |                                                           |
-                                        |                                                           |<- and here goes the content
-                                        |                                                           |
-                                        |                                                           |
-                                        |                                                           |
-                                        |                                                           |
-                                        |                                                           | <- and keeps going until the footer           
-                */}
             </div>
 
             <div className="Content">
+                <ResultsContainer games={games} />
                 <h1>WIP</h1>
-                {/*
-                // Color of the content: Dark gray
-                
-                this can be or the Question side or the result one
-
-                */}
             </div>
-
-            <div><ResultsContainer listOfGames={listOfGames} userArchetypes={userArchetypes} /></div>
 
             <div className="Footer-one">
                 <h1>idunno what to add here RN NGL</h1>
-                {/*
-                                        |-----------------------------------------------------------|<-here starts de footer
-                                        Maybe the README file and a donation button (no se preocupen de ese lado, yo de eso me encargare en el futuro)
-
-                */}
             </div>
         </div>
     );

@@ -1,52 +1,62 @@
-import { useEffect, useState } from 'react';
-import ImageBox from './ImageBox';
-import CharacterFetcher from './CharacterFetcher';
+// src/Components/ResultsContainer.js
+import React from 'react';
+import Slider from 'react-slick';
+import { ImageBox } from '../Components/ImageBox'; // Asegúrate de que la ruta es correcta
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
-export default function ResultsContainer({ listOfGames, userArchetypes }) {
-    const [characterLists, setCharacterLists] = useState([]);
-
-    useEffect(() => {
-        const fetchCharacters = async () => {
-            const characterLists = await Promise.all(
-                listOfGames.map(async (gameObj) => {
-                    const characters = await CharacterFetcher(gameObj.name, userArchetypes);
-                    return {
-                        gameName: gameObj.name,
-                        characters: characters,
-                    };
-                })
-            );
-            setCharacterLists(characterLists);
-        };
-
-        fetchCharacters();
-    }, [listOfGames, userArchetypes]);
+const ResultsContainer = ({ games }) => {
+    const sliderSettings = {
+        dots: true,
+        infinite: true,
+        speed: 500,
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        responsive: [
+            {
+                breakpoint: 1024,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 1,
+                    infinite: true,
+                    dots: true
+                }
+            },
+            {
+                breakpoint: 600,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    initialSlide: 1
+                }
+            }
+        ]
+    };
 
     return (
-        <>
-            <div className="Games">
-                {listOfGames.map((gameObj, index) => (
-                    <div key={index}>
-                        <ImageBox
-                            image={gameObj.image_url}
-                            NumberOfImage={index + 1}
-                            Name={gameObj.name}
-                            Size={'15%'}
-                        />
-                        <div className="Characters">
-                            {characterLists[index]?.characters.map((character, characterIndex) => (
-                                <ImageBox
-                                    key={characterIndex}
-                                    image={character.image_url}
-                                    NumberOfImage={characterIndex + 1}
-                                    Name={character.name}
-                                    Size={'10%'}
-                                />
-                            ))}
-                        </div>
+        <div className="results-container">
+            {games.map((game, index) => (
+                <div key={index} className="game-container">
+                    <div className="cover-container">
+                        <img src={game.image_url} alt={game.name} className="cover-image" />
+                        <p className="game-name">{game.name}</p>
                     </div>
-                ))}
-            </div>
-        </>
+                    <Slider {...sliderSettings}>
+                        {game.characters.map((character, charIndex) => (
+                            <div key={charIndex}>
+                                <ImageBox
+                                    image={character.image_url}
+                                    NumberOfImage={charIndex + 1}
+                                    Name={character.name}
+                                    Size={'100%'}
+                                />
+                            </div>
+                        ))}
+                    </Slider>
+                </div>
+            ))}
+        </div>
     );
-}
+};
+
+export default ResultsContainer;
