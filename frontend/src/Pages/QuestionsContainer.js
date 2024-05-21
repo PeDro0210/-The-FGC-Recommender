@@ -1,7 +1,7 @@
-import React from 'react';
 import "../styles/Questions/QuestionContainer.css";
 import { QuestionBox } from '../Components/QuestionBox';
 import { useEffect, useState} from 'react';
+import {PseoudoQuestionFetcher} from '../API/ApiHandler';
 
 
 
@@ -12,50 +12,24 @@ export function Questions({handlerpasco}) {   //inside joke
         "Categories":["2D","3D","TagTeam","AirDashers","Anime","WeaponBased","Fast-paced","Footsies","SlowPaced","Installbased","CrossOver"],   
         "Points":[0,0,0,0,0,0,0,0,0,0,0]
     }
-    let QuestionArchetype = {}
+    let QuestionArchetype = {
+        "Categories":[],
+        "Points":[]
+    }
 
-    let [Categories, setCategories] = useState([]);
+    // Fuck UseStates
+    let Categories = [];
 
-    let [Archetypes, setArchetypes] = useState([]);
+    let Archetypes = [];
     
+
+    const [QuestionList, setQuestionList]  = useState([]);
 
     useEffect(() => {
-        handlerpasco({ Categories, Archetypes });
-      }, [Categories, Archetypes, handlerpasco]);
-
-    const QuestionList1 =  [
-        
-            {
-                "question":"Que clase de movimientos te gustan mas en un juego de pelea?",
-                "answears":["En el aire principalmente",
-                            "En el suelo un poco mas pausado, centrado en el 'neutral' y el 'footsies'",
-                            "En un entorno el cual me pueda mover bastante tridiemensionalmente",
-                            "Rapido, donde no haya tanto tiempo para pensar y mas para reaccionar",
-                            ],
-                "points":[["CrossOver","2D","Anime","Fast-paced"],
-                ["2D","3D","Footsies","SlowPaced"],
-                ["3D","Footsies"],
-                ["CrossOver","2D","Anime","Fast-paced", "AirDashers"]]
-            },
+        const questions =  PseoudoQuestionFetcher(); 
+        setQuestionList(questions);
+    }, []);
     
-            {
-                "question":"Que clase de acercamiento en general de combate te gusta mas?",
-                "answears":[
-                        "Yo y mi oponente en el suelo, ver quien da el primer paso y quien se equivoca",
-                        "Hacer esos combos largos, vistosos con sus finishers espectaculares",
-                        "Que sea un poco mas pausado, donde pueda pensar un poco mas en mis movimientos",
-                        "Ver esos momentos donde tenga la oportunidad de pegar y que mi oponente no pueda hacer nada"
-                ],
-                "points":[["2D","3D","Footsies","SlowPaced","WeaponBased"],
-                ["2D","Anime","Fast-paced","AirDashers"],
-                ["3D","Footsies","WeaponBased"],
-                ["2D","WeaponBased"]]
-            }
-    
-    ]
-
-
-
 
     /**
     * Function that adds the points to the category that the question corresponds to or removes the points if the the question is de-selected
@@ -70,14 +44,13 @@ export function Questions({handlerpasco}) {   //inside joke
             if (QuestionCategories["Categories"].includes(Categories[i])) {
                 let indx = QuestionCategories["Categories"].indexOf(Categories[i])
                 QuestionCategories["Points"][indx] = QuestionCategories["Points"][indx] + 1;
-            }/*
+            }
             if (QuestionArchetype["Categories"].includes(Categories[i])){
                 console.log(Categories[i])
                 let indx = QuestionArchetype["Categories"].indexOf(Categories[i])
                 console.log(indx)
                 QuestionArchetype["Points"][indx] = QuestionArchetype["Points"][indx] + 1;
             }
-            */
         }
     }
     
@@ -97,12 +70,9 @@ export function Questions({handlerpasco}) {   //inside joke
         }
         
         PointAdder(answears1);
-        console.log(QuestionCategories["Points"])
-        
-        setCategories(top3cat());
-        //setArchetypes(top3arc());
-        //console.log(Archetypes)
-        console.log(top3cat())
+        Categories = top3cat();
+        Archetypes = top3arc();
+        handlerpasco({Categories:Categories,Archetype:Archetypes});
         
     }
 
@@ -146,82 +116,27 @@ export function Questions({handlerpasco}) {   //inside joke
         return top3
     }
 
-    
-
-    
-
-    // TODO: Call the QuestionFetcher function to get the questions and make the QuestionBox component to show the questions.
-    // TODO: make a submit button that will return all the QuestionCategories once all questions are answered to the ResultReciever, to be send to the react backend
-    // TODO: Odio mi vida
     let count = 0;
-
-    
 
     return (
         
         <div>
-        <div>
-            
-            {/*
             {QuestionList.map((Question) => {
-                count = count + 1;
-                return (
-                    
-                    // <h1><QuestionBox Answear={Question.Answears} PointsAdder={Question.Points} Question={Question.Question} Number={count} /></h1>
-                    <h1>{Question.Answears}</h1>
-                )
-            })}
-            */}
-
-            {QuestionList1.map((Question) => {
                 count = count + 1;
                 return (
                     <div className='Questions-box'>
                         <h1><QuestionBox Answear={Question.answears} PointsAdder={Question.points} Question={Question.question} Number={count} /></h1>
-                        <h2></h2>
                     </div>
                 )
             })}
-
-
-
-            
-            
-            {/* 
-                                    |-----------------------------------------------------------|<-here ends the header                                     
-                                    |                                                           | 
-                                    |                                                           |
-                                    |(QuestionComponents                                        |
-                                    |   Question                                                |      
-                                    | SelectionBox   (answear)                                   | <- and the components will have there own dimensions
-                                    |                                                           |
-                                    |)                                                          | 
-                                    |                                                           |
-                                    |                                                           |
-                                    |                                                           |
-                                    |                                                           |
-                                    |                                                           |
-                                    |                                                           |
-                                    |                                                           | <- and keeps going until the footer
-                                    |-----------------------------------------------------------| <- and here goes the footer
-            
-            */
-            
-            }
-            
-        </div>
         
-        <div className='Questions-box'>
+
             <button type="button" class="button" onClick={() => getAnswears()}>
                 Submit
             </button>
+
         </div>
-        <div id="result"></div>
-        </div>
-    
-        
-        
-        
+      
     )
 }
 
