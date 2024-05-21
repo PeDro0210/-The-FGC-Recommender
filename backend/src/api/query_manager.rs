@@ -155,6 +155,6 @@ pub async fn get_games(categories: Vec<String>) -> Vec<Game> {
 }
 
 // Gets the characters for a certain game
-pub async fn get_characters(game_name: String, arhetypes: Vec<String>) -> Vec<Character> {;
+pub async fn get_characters(game_name: String, arhetypes: Vec<String>) -> Vec<Character> {
     return fetching_characters(game_name,arhetypes).await;
 }

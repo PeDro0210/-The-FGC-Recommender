@@ -2,29 +2,45 @@
     "Questions":[
         {
             "question":"Que clase de movimientos te gustan mas en un juego de pelea?",
-            "answears":["En el aire principalmente",
-                        "En el suelo un poco mas pausado, centrado en el 'neutral' y el 'footsies'",
-                        "En un entorno el cual me pueda mover bastante tridiemensionalmente",
-                        "Rapido, donde no haya tanto tiempo para pensar y mas para reaccionar",
-                        ],
-            "points":[["CrossOver","2D","Anime","Fast-paced"],
-            ["2D","3D","Footsies","SlowPaced"],
-            ["3D","Footsies"],
-            ["CrossOver","2D","Anime","Fast-paced", "AirDashers"]]
+            "answears":[
+                {
+                    "answear":"En el aire principalmente",
+                    "points":["CrossOver","2D","Anime","Fast-paced", "AirDashers"]
+                },
+                {
+                    "answear":"En el suelo un poco mas pausado, centrado en el 'neutral' y el 'footsies'",
+                    "points":["2D","3D","Footsies","SlowPaced"]
+                },
+                {
+                    "answear":"En un entorno el cual me pueda mover bastante tridiemensionalmente",
+                    "points":["3D","Footsies"]
+                },
+                {
+                    "answear":"Rapido, donde no haya tanto tiempo para pensar y mas para reaccionar",
+                    "points":["CrossOver","2D","Anime","Fast-paced"]
+                }
+            ]
         },
-
         {
             "question":"Que clase de acercamiento en general de combate te gusta mas?",
             "answears":[
-                    "Yo y mi oponente en el suelo, ver quien da el primer paso y quien se equivoca",
-                    "Hacer esos combos largos, vistosos con sus finishers espectaculares",
-                    "Que sea un poco mas pausado, donde pueda pensar un poco mas en mis movimientos",
-                    "Ver esos momentos donde tenga la oportunidad de pegar y que mi oponente no pueda hacer nada"
-            ],
-            "points":[["2D","3D","Footsies","SlowPaced","WeaponBased"],
-            ["2D","Anime","Fast-paced","AirDashers"],
-            ["3D","Footsies","WeaponBased"],
-            ["2D","WeaponBased"]]
+                {
+                    "answear":"Yo y mi oponente en el suelo, ver quien da el primer paso y quien se equivoca",
+                    "points":["2D","3D","Footsies","SlowPaced","WeaponBased"]
+                },
+                {
+                    "answear":"Hacer esos combos largos, vistosos con sus finishers espectaculares",
+                    "points":["2D","Anime","Fast-paced","AirDashers"]
+                },
+                {
+                    "answear":"Que sea un poco mas pausado, donde pueda pensar un poco mas en mis movimientos",
+                    "points":["3D","Footsies","WeaponBased"]
+                },
+                {
+                    "answear":"Ver esos momentos donde tenga la oportunidad de pegar y que mi oponente no pueda hacer nada",
+                    "points":["2D","WeaponBased"]
+                }
+            ]
         }
     ]
 }
