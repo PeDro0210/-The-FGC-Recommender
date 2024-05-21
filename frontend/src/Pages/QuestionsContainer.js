@@ -1,13 +1,12 @@
 import React from 'react';
 import "../styles/Questions/QuestionContainer.css";
 import { QuestionBox } from '../Components/QuestionBox';
-import { useState } from 'react';
-// add react map
+import { useEffect, useState} from 'react';
 
 
 
 
-export function Questions() {    
+export function Questions({handlerpasco}) {   //inside joke  
     // JSON object that will contain the categories and the points that it gives to that category
     let QuestionCategories = {
         "Categories":["2D","3D","TagTeam","AirDashers","Anime","WeaponBased","Fast-paced","Footsies","SlowPaced","Installbased","CrossOver"],   
@@ -19,6 +18,10 @@ export function Questions() {
 
     let [Archetypes, setArchetypes] = useState([]);
     
+
+    useEffect(() => {
+        handlerpasco({ Categories, Archetypes });
+      }, [Categories, Archetypes, handlerpasco]);
 
     const QuestionList1 =  [
         
@@ -94,14 +97,16 @@ export function Questions() {
         }
         
         PointAdder(answears1);
-
+        console.log(QuestionCategories["Points"])
         
         setCategories(top3cat());
         //setArchetypes(top3arc());
-        console.log('cat:' + Categories)
         //console.log(Archetypes)
+        console.log(top3cat())
         
     }
+
+    
 
     function top3cat(){
         //find the top 3 categories

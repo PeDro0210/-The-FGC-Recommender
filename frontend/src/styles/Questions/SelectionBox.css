@@ -1,6 +1,5 @@
 /* The container */
 .container {
-  text-transform: capitalize;
   display: block;
   position: relative;
   padding-left: 5%;

@@ -1,8 +1,20 @@
 import React from 'react';
 import "../src/styles/app.css";
 import { Questions } from './Pages/QuestionsContainer';
+import { useEffect, useState} from 'react';
 
 function App() {
+
+    //your mom
+
+    //set useStates
+
+    const [Categories, setCategories] = useState({ Categories: [], Archetype: [] });
+
+    const handleCategoriesData = (data) => {
+        setCategories(data);
+        console.log(data);
+      };
 
   return (
       <div className = "main-content">
