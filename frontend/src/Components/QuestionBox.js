@@ -1,4 +1,9 @@
 
+import React from 'react';
+import "../styles/Questions/SelectionBox.css";
+import "../styles/Questions/Question.css";
+
+
 /**
  * 
  * React Component that displays the questions and the possible answers
@@ -14,38 +19,37 @@
 // Or maybe I do, at the end Everything for th FGC 🫡🫡🫡🫡🫡🫡!!!!!!!!!!!
 
 
-export function QuestionBox({Answear, PointsAdder, Question}) {
+export function QuestionBox({Answear, PointsAdder, Question, Number}) {
+    const Name = "radio" + Number
 
     return (
-        <>
-        <div className = "Question">
-
-            {/*
-            Example
-            |===========================================================|
-            | 1) What's your favorite way of playing                    | <- Number Question and Question it self
-            |                                                           |
-            |                                                           | <- Space for the questions            
-            */}
-
-        </div>
+        <div>
+            <div className="Question">
+                <h1>{Number}. {Question}</h1>
+                <hr/>
+            </div>
         
-        <div className = "SelectionBox">
-
-            {/*
-            Example
-            |                                                          |
-            |  ☐ a) Agressive and fast paced                           | <- Selection Box (Each answear will have the have the category that gives points too)
-            |  ☐ b) Defensive and slow paced                           | <- Selection Box (Each answear will have the have the category that gives points too)
-            |  ☐ c) Balanced and strategic                             | <- Selection Box (Each answear will have the have the category that gives points too) 
-            |  ☐ d) I don't know                                       | <- Selection Box (Each answear will have the have the category that gives points too)
-            |                                                          |
-            |===========================================================|
-            
-
-            */}
-
-        </div>
-        </> 
+            <div className="SelectionBox">
+                <label className="container">{Answear[0]}
+                    <input type="radio" name={Name} value={PointsAdder[0]}/>
+                    <span className="checkmark"></span>
+                </label>
+                <label className="container">{Answear[1]}
+                    <input type="radio" name={Name} value={PointsAdder[1]}/>
+                    <span className="checkmark"></span>
+                </label>
+                <label className="container">{Answear[2]}
+                    <input type="radio" name={Name} value={PointsAdder[2]}/>
+                    <span className="checkmark"></span>
+                </label>
+                <label className="container">{Answear[3]}
+                    <input type="radio" name={Name} value={PointsAdder[3]}/>
+                    <span className="checkmark"></span>
+                </label>
+                
+            </div>
+        </div> 
     )
 }
+
+

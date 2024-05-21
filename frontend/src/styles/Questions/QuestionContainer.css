@@ -1,0 +1,39 @@
+
+/* Just for brandon to start working */
+
+
+.Questions-box{
+    border-radius: 5%;
+    background-color: #79A3B1;
+    width: 75%;
+    height: 35%;
+    border: 5px solid #79A3B1;
+    margin: auto;
+    margin-bottom: 5%;
+}   
+
+.button {
+    background-color: #008891;
+    border: none;
+    color: #E7E7DE;
+    padding: 14px 40px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    font-size: 20px;
+    font: 900 2.5vw starbirlregular;
+}
+
+
+
+@font-face {
+  font-family: 'starbirlregular';
+  src: url('/public/Fonts/starbirl-webfont.woff2') format('woff2'),
+       url('/public/Fonts/starbirl-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+
+}
