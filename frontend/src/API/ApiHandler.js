@@ -4,7 +4,7 @@
 async function QuestionFetcher() {
   const response = await fetch('http://localhost:3001/questions'); //the URL is not correct, I will change it later
   const data = await response.json();
-  return data;
+  return data.questions;
 }
 
 async function GamesFetcher(categories) {

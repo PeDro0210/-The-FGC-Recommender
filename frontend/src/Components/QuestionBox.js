@@ -31,36 +31,25 @@ export function QuestionBox({Answear, PointsAdder, Question, Number}) {
         
             <div className="SelectionBox">
                 <label className="container">{Answear[0]}
-                    <input type="radio" name={Name} value={Answear[0]}/>
+                    <input type="radio" name={Name} value={PointsAdder[0]}/>
                     <span className="checkmark"></span>
                 </label>
                 <label className="container">{Answear[1]}
-                    <input type="radio" name={Name} value={Answear[1]}/>
+                    <input type="radio" name={Name} value={PointsAdder[1]}/>
                     <span className="checkmark"></span>
                 </label>
                 <label className="container">{Answear[2]}
-                    <input type="radio" name={Name} value={Answear[2]}/>
+                    <input type="radio" name={Name} value={PointsAdder[2]}/>
                     <span className="checkmark"></span>
                 </label>
                 <label className="container">{Answear[3]}
-                    <input type="radio" name={Name} value={Answear[3]}/>
+                    <input type="radio" name={Name} value={PointsAdder[3]}/>
                     <span className="checkmark"></span>
                 </label>
-                <button type="button" onClick={() => displayRadioValue({Name1: Name})}>
-                    Submit
-                </button>
                 
-                <div id="result"></div>
             </div>
         </div> 
     )
 }
 
-function displayRadioValue(Name) {
-    var ele = document.getElementsByName(Name.Name1);
-    for (var i = 0; i < ele.length; i++) {
-        if (ele[i].checked) {
-            document.getElementById("result").innerHTML = "Answer: " + ele[i].value;
-        }
-    }
-}
+

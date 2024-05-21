@@ -1,6 +1,11 @@
 import React from 'react';
 import "../styles/Questions/QuestionContainer.css";
 import { QuestionBox } from '../Components/QuestionBox';
+import { useState } from 'react';
+// add react map
+
+
+
 
 export function Questions() {    
     // JSON object that will contain the categories and the points that it gives to that category
@@ -10,39 +15,44 @@ export function Questions() {
     }
     let QuestionArchetype = {}
 
-    /*const[QuestionList, setQuestionList] = useState([
-        Question: "Place Holder?",
-        Answears: [ans1, ans2, ans3, ans4],
-        Points: [[1,2,3,4], [1,2,3,4], [1,2,3,4], [1,2,3,4]]
-    ])
-    */
+    let [Categories, setCategories] = useState([]);
 
-    /*{"Questions":[
-    {"answears":[
-    {"answear":"En el aire principalmente",
-    "points":["CrossOver","2D","Anime","Fast-paced","AirDashers"]},
-    {"answear":"En el suelo un poco mas pausado, centrado en el 'neutral' y el 'footsies'",
-    "points":["2D","3D","Footsies","SlowPaced"]},
-    {"answear":"En un entorno el cual me pueda mover bastante tridiemensionalmente",
-    "points":["3D","Footsies"]},
-    {"answear":"Rapido, donde no haya tanto tiempo para pensar y mas para reaccionar",
-    "points":["CrossOver","2D","Anime","Fast-paced"]}
-    ],
-    "question":"Que clase de movimientos te gustan mas en un juego de pelea?"},
-
-    {"answears":[
-    {"answear":"Yo y mi oponente en el suelo, ver quien da el primer paso y quien se equivoca",
-    "points":["2D","3D","Footsies","SlowPaced","WeaponBased"]},
-    {"answear":"Hacer esos combos largos, vistosos con sus finishers espectaculares",
-    "points":["2D","Anime","Fast-paced","AirDashers"]},
-    {"answear":"Que sea un poco mas pausado, donde pueda pensar un poco mas en mis movimientos",
-    "points":["3D","Footsies","WeaponBased"]},
-    {"answear":"Ver esos momentos donde tenga la oportunidad de pegar y que mi oponente no pueda hacer nada",
-    "points":["2D","WeaponBased"]}
-    ],
-    "question":"Que clase de acercamiento en general de combate te gusta mas?"}
+    let [Archetypes, setArchetypes] = useState([]);
     
-    ]} */
+
+    const QuestionList1 =  [
+        
+            {
+                "question":"Que clase de movimientos te gustan mas en un juego de pelea?",
+                "answears":["En el aire principalmente",
+                            "En el suelo un poco mas pausado, centrado en el 'neutral' y el 'footsies'",
+                            "En un entorno el cual me pueda mover bastante tridiemensionalmente",
+                            "Rapido, donde no haya tanto tiempo para pensar y mas para reaccionar",
+                            ],
+                "points":[["CrossOver","2D","Anime","Fast-paced"],
+                ["2D","3D","Footsies","SlowPaced"],
+                ["3D","Footsies"],
+                ["CrossOver","2D","Anime","Fast-paced", "AirDashers"]]
+            },
+    
+            {
+                "question":"Que clase de acercamiento en general de combate te gusta mas?",
+                "answears":[
+                        "Yo y mi oponente en el suelo, ver quien da el primer paso y quien se equivoca",
+                        "Hacer esos combos largos, vistosos con sus finishers espectaculares",
+                        "Que sea un poco mas pausado, donde pueda pensar un poco mas en mis movimientos",
+                        "Ver esos momentos donde tenga la oportunidad de pegar y que mi oponente no pueda hacer nada"
+                ],
+                "points":[["2D","3D","Footsies","SlowPaced","WeaponBased"],
+                ["2D","Anime","Fast-paced","AirDashers"],
+                ["3D","Footsies","WeaponBased"],
+                ["2D","WeaponBased"]]
+            }
+    
+    ]
+
+
+
 
     /**
     * Function that adds the points to the category that the question corresponds to or removes the points if the the question is de-selected
@@ -51,29 +61,126 @@ export function Questions() {
     */
     // Will recieve a list
 
-    // TODO: Apply the function in to the JSX :D
+    // TODO: Apply the function in to the JSX :D (Ya funciona :D )
     const PointAdder = (Categories) => { 
         for (let i = 0; i < Categories.length; i++) {
-            if (Categories[i] in QuestionCategories){
-                QuestionCategories["Points"][QuestionCategories["Categories"].indexOf(Categories[i])] = QuestionCategories["Points"][QuestionCategories["Categories"].indexOf(Categories[i])] + 1;
+            if (QuestionCategories["Categories"].includes(Categories[i])) {
+                let indx = QuestionCategories["Categories"].indexOf(Categories[i])
+                QuestionCategories["Points"][indx] = QuestionCategories["Points"][indx] + 1;
+            }/*
+            if (QuestionArchetype["Categories"].includes(Categories[i])){
+                console.log(Categories[i])
+                let indx = QuestionArchetype["Categories"].indexOf(Categories[i])
+                console.log(indx)
+                QuestionArchetype["Points"][indx] = QuestionArchetype["Points"][indx] + 1;
             }
-            if (Categories[i] in QuestionArchetype){
-                QuestionCategories["Points"][QuestionCategories["Categories"].indexOf(Categories[i])] = QuestionCategories["Points"][QuestionCategories["Categories"].indexOf(Categories[i])] + 1;
-            }
+            */
         }
     }
+    
+    function getAnswears(){
+        const answears1 = []
+        for (let i = 1; i < 3; i++) {
+            const Name = "radio" + i
+            var ele = document.getElementsByName(Name);
+            for (var j = 0; j < ele.length; j++) {
+                if (ele[j].checked) {
+                    const answ = ele[j].value.split(",")
+                    for (let k = 0; k < answ.length; k++) {
+                        answears1.push(answ[k])
+                    }
+                }
+            }
+        }
+        
+        PointAdder(answears1);
+
+        
+        setCategories(top3cat());
+        //setArchetypes(top3arc());
+        console.log('cat:' + Categories)
+        //console.log(Archetypes)
+        
+    }
+
+    function top3cat(){
+        //find the top 3 categories
+        let top3 = []
+        let top3indx = []
+        for (let i = 0; i < 3; i++) {
+            let max = 0;
+            let indx = 0;
+            for (let j = 0; j < QuestionCategories["Points"].length; j++) {
+                if (QuestionCategories["Points"][j] > max && !top3indx.includes(j)) {
+                    max = QuestionCategories["Points"][j];
+                    indx = j;
+                }
+            }
+            top3.push(QuestionCategories["Categories"][indx])
+            top3indx.push(indx)
+        }
+        return top3
+    }
+
+    function top3arc(){
+        //find the top 3 archetypes
+        let top3 = []
+        let top3indx = []
+        for (let i = 0; i < 3; i++) {
+            let max = 0;
+            let indx = 0;
+            for (let j = 0; j < QuestionArchetype["Points"].length; j++) {
+                if (QuestionArchetype["Points"][j] > max && !top3indx.includes(j)) {
+                    max = QuestionArchetype["Points"][j];
+                    indx = j;
+                }
+            }
+            top3.push(QuestionArchetype["Categories"][indx])
+            top3indx.push(indx)
+        }
+        return top3
+    }
+
+    
+
+    
 
     // TODO: Call the QuestionFetcher function to get the questions and make the QuestionBox component to show the questions.
     // TODO: make a submit button that will return all the QuestionCategories once all questions are answered to the ResultReciever, to be send to the react backend
+    // TODO: Odio mi vida
+    let count = 0;
+
     
-    const answer = ['ph1','ph2','ph3','ph4'];
-    const points = 2;
 
     return (
         
         <div>
-        <div className='Questions-box'>
-            <h1><QuestionBox Answear={answer} PointsAdder={points} Question='placeholder?' Number={1} /></h1>
+        <div>
+            
+            {/*
+            {QuestionList.map((Question) => {
+                count = count + 1;
+                return (
+                    
+                    // <h1><QuestionBox Answear={Question.Answears} PointsAdder={Question.Points} Question={Question.Question} Number={count} /></h1>
+                    <h1>{Question.Answears}</h1>
+                )
+            })}
+            */}
+
+            {QuestionList1.map((Question) => {
+                count = count + 1;
+                return (
+                    <div className='Questions-box'>
+                        <h1><QuestionBox Answear={Question.answears} PointsAdder={Question.points} Question={Question.question} Number={count} /></h1>
+                        <h2></h2>
+                    </div>
+                )
+            })}
+
+
+
+            
             
             {/* 
                                     |-----------------------------------------------------------|<-here ends the header                                     
@@ -98,10 +205,13 @@ export function Questions() {
             }
             
         </div>
-        <h2></h2>
+        
         <div className='Questions-box'>
-            <h1><QuestionBox Answear={answer} PointsAdder={points} Question='1?' Number={2} /></h1>
+            <button type="button" class="button" onClick={() => getAnswears()}>
+                Submit
+            </button>
         </div>
+        <div id="result"></div>
         </div>
     
         
