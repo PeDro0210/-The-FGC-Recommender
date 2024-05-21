@@ -1,8 +1,38 @@
 import React from 'react';
 import "../src/styles/app.css";
 import { ImageBox } from '../src/Components/ImageBox'; // Asegúrate de que la ruta es correcta
+import Slider from 'react-slick';
+import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick-theme.css";
 
 function App({ imageList }) {
+    const settings = {
+        dots: true,
+        infinite: true,
+        speed: 500,
+        slidesToShow: Math.min(imageList.length, 3), // Mostrar hasta 3 imágenes o menos si hay menos imágenes
+        slidesToScroll: 1,
+        responsive: [
+            {
+                breakpoint: 1024,
+                settings: {
+                    slidesToShow: Math.min(imageList.length, 2),
+                    slidesToScroll: 1,
+                    infinite: true,
+                    dots: true
+                }
+            },
+            {
+                breakpoint: 600,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    initialSlide: 1
+                }
+            }
+        ]
+    };
+
     return (
         <div className="main-content">
             <div className="Header-one">
@@ -19,7 +49,7 @@ function App({ imageList }) {
     |    |   |  |  \_/ __ \   |    __)/   \  ___/    \  \/   ______ |       _// __ \_/ ___\/  _ \ /     \ /     \_/ __ \ /    \  / __ |/ __ \_  __ \    |
     |    |   |   Y  \  ___/   |     \ \    \_\  \     \____ /_____/ |    |   \  ___/\  \__(  <_> )  Y Y  \  Y Y  \  ___/|   |  \/ /_/ \  ___/|  | \/    | <- this ascii logo is a place holder
     |____|   |___|  /\___  >  \___  /  \______  /\______  /         |____|_  /\___  >\___  >____/|__|_|  /__|_|  /\___  >___|  /\____ |\___  >__|       |   
-                  \/     \/       \/          \/        \/                 \/     \/     \/            \/      \/     \/     \/      \/    \/           |
+                  \/     \/       \/          \/        \/                 \/     \/     \/            \/      \/     \/      \/    \/           |
                                         |-----------------------------------------------------------|<-here ends the header                             |
                                         |                                                           |                                                   | <- limit of the page
                                         |                                                           | 
@@ -35,15 +65,18 @@ function App({ imageList }) {
             </div>
 
             <div className="Content">
-                {imageList.map((imgObj, index) => (
-                    <ImageBox
-                        key={index}
-                        image={imgObj.image_url}
-                        NumberOfImage={index + 1}
-                        Name={imgObj.name}
-                        Size={'100%'}
-                    />
-                ))}
+                <Slider {...settings}>
+                    {imageList.map((imgObj, index) => (
+                        <div key={index}>
+                            <ImageBox
+                                image={imgObj.image_url}
+                                NumberOfImage={index + 1}
+                                Name={imgObj.name}
+                                Size={'100%'}
+                            />
+                        </div>
+                    ))}
+                </Slider>
                 <h1>WIP</h1>
                 {/*
                 // Color of the content: Dark gray

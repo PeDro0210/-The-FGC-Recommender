@@ -31,6 +31,3 @@ async function CharacterFetcher(gameID, Arhetypes) {
   return data;
 }
 
-//funcion de prueba 
-
-//llamar al game fetcher, le doy un juego y arquetipos, y devulve los personajes y archetypes en base al tiutlo del juego.
