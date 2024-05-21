@@ -10,3 +10,12 @@ actix-web = "4"
 neo4rs = "0.7.1"
 tokio = { version = "1", features = ["full"] }
 serde = { version = "1.0", features = ["derive"] }
+dotenv = "0.15.0"
+serde_json = "1.0.68"
+
+[[test]]
+name = "queries_test"
+path = "src/tests.rs"
+
+
+
