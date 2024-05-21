@@ -4,35 +4,18 @@ import { ImageBox } from '../src/Components/ImageBox'; // Asegúrate de que la r
 import Slider from 'react-slick';
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
+import ResultsContainer from './Pages/ResultsContainer';
 
-function App({ imageList }) {
-    const settings = {
-        dots: true,
-        infinite: true,
-        speed: 500,
-        slidesToShow: Math.min(imageList.length, 3), // Mostrar hasta 3 imágenes o menos si hay menos imágenes
-        slidesToScroll: 1,
-        responsive: [
-            {
-                breakpoint: 1024,
-                settings: {
-                    slidesToShow: Math.min(imageList.length, 2),
-                    slidesToScroll: 1,
-                    infinite: true,
-                    dots: true
-                }
-            },
-            {
-                breakpoint: 600,
-                settings: {
-                    slidesToShow: 1,
-                    slidesToScroll: 1,
-                    initialSlide: 1
-                }
-            }
-        ]
-    };
+const listOfGames = [
+    {"name":"Street Fighter V Champion Edition","image_url":"WIP"},
+    {"name":"Street Fighter VI","image_url":"WIP"}
+];
 
+const userArchetypes = ["Mishima"]; // Ejemplo de arquetipos
+
+
+function App() {
+    
     return (
         <div className="main-content">
             <div className="Header-one">
@@ -65,18 +48,6 @@ function App({ imageList }) {
             </div>
 
             <div className="Content">
-                <Slider {...settings}>
-                    {imageList.map((imgObj, index) => (
-                        <div key={index}>
-                            <ImageBox
-                                image={imgObj.image_url}
-                                NumberOfImage={index + 1}
-                                Name={imgObj.name}
-                                Size={'100%'}
-                            />
-                        </div>
-                    ))}
-                </Slider>
                 <h1>WIP</h1>
                 {/*
                 // Color of the content: Dark gray
@@ -85,6 +56,8 @@ function App({ imageList }) {
 
                 */}
             </div>
+
+            <div><ResultsContainer listOfGames={listOfGames} userArchetypes={userArchetypes} /></div>
 
             <div className="Footer-one">
                 <h1>idunno what to add here RN NGL</h1>

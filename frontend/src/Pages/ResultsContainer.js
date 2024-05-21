@@ -1,44 +1,52 @@
-import React, { useEffect, useState } from 'react';
-import { CharacterFetcher } from '../ApiHandler';
-import Slider from 'react-slick';
-import ImageBox from '../Components/ImageBox';
+import { useEffect, useState } from 'react';
+import ImageBox from './ImageBox';
+import CharacterFetcher from './CharacterFetcher';
 
-function ResultsContainer({ listOfGames, userArchetypes }) {
+export default function ResultsContainer({ listOfGames, userArchetypes }) {
     const [characterLists, setCharacterLists] = useState([]);
 
     useEffect(() => {
         const fetchCharacters = async () => {
-            const characters = [];
-            for (let i = 0; i < listOfGames.length; i++) {
-                const game = listOfGames[i];
-                const gameCharacters = await CharacterFetcher(game.name, userArchetypes);
-                characters.push(gameCharacters);
-            }
-            setCharacterLists(characters);
+            const characterLists = await Promise.all(
+                listOfGames.map(async (gameObj) => {
+                    const characters = await CharacterFetcher(gameObj.name, userArchetypes);
+                    return {
+                        gameName: gameObj.name,
+                        characters: characters,
+                    };
+                })
+            );
+            setCharacterLists(characterLists);
         };
 
         fetchCharacters();
     }, [listOfGames, userArchetypes]);
 
     return (
-        <div>
-            {characterLists.map((gameCharacters, index) => (
-                <div key={index}>
-                    <h2>{listOfGames[index].name}</h2>
-                    <div className="game-cover">
-                        <img src={listOfGames[index].image_url} alt={`Cover of ${listOfGames[index].name}`} />
+        <>
+            <div className="Games">
+                {listOfGames.map((gameObj, index) => (
+                    <div key={index}>
+                        <ImageBox
+                            image={gameObj.image_url}
+                            NumberOfImage={index + 1}
+                            Name={gameObj.name}
+                            Size={'15%'}
+                        />
+                        <div className="Characters">
+                            {characterLists[index]?.characters.map((character, characterIndex) => (
+                                <ImageBox
+                                    key={characterIndex}
+                                    image={character.image_url}
+                                    NumberOfImage={characterIndex + 1}
+                                    Name={character.name}
+                                    Size={'10%'}
+                                />
+                            ))}
+                        </div>
                     </div>
-                    <Slider>
-                        {gameCharacters.map((character, charIndex) => (
-                            <div key={charIndex}>
-                                <ImageBox image={character.image_url} Name={character.name} Size={'100%'} />
-                            </div>
-                        ))}
-                    </Slider>
-                </div>
-            ))}
-        </div>
+                ))}
+            </div>
+        </>
     );
 }
-
-export default ResultsContainer;
