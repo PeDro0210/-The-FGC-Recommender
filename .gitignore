@@ -6,3 +6,4 @@ git -C backend/ clean -fdx
 backend
 frontend
 *.env
+.env
