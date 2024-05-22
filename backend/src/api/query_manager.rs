@@ -57,7 +57,7 @@ async fn user_node_creation(categories: Vec<String>) -> String {
 
 // Makes a query for content-based filtering using jaccard similarity with the created user node
 // * public for testing
-async fn jaccard_similarity_query(userhash: String) -> Vec<Game>  {
+async fn jaccard_similarity_query(userhash: String, archetypes: Vec<String>) -> Vec<Game>  {
     let graph = start_driver().await;
     let mut game_vec = Vec::new();
     
@@ -100,8 +100,11 @@ async fn jaccard_similarity_query(userhash: String) -> Vec<Game>  {
                 // Object structure for characters, with there keys for getting the info
                 let game_parsed = Game{
                     name: game.get("name").unwrap().to_string(), 
-                    image_url: game.get("image_link").unwrap().to_string()
+                    image_url: game.get("image_link").unwrap().to_string(),
+                    characters: fetching_characters(game.get("name").unwrap().to_string(), archetypes.clone()).await // Await the fetching_characters function call with cloned archetypes
+
                 };
+                println!("{:?}", game_vec); // Use {:?} instead of {:} to print the game_vec vector
                 game_vec.push(game_parsed);
             },
             None => break,
@@ -149,12 +152,7 @@ pub async fn fetching_characters(game_name: String, archetypes: Vec<String>) -> 
 
 
 // Gets the games (like it ain't rocket science)
-pub async fn get_games(categories: Vec<String>) -> Vec<Game> {
+pub async fn get_games(categories: Vec<String>, arhetypes: Vec<String>) -> Vec<Game> {
     let userhash = user_node_creation(categories).await;
-    return jaccard_similarity_query(userhash).await
-}
-
-// Gets the characters for a certain game
-pub async fn get_characters(game_name: String, arhetypes: Vec<String>) -> Vec<Character> {
-    return fetching_characters(game_name,arhetypes).await;
+    return jaccard_similarity_query(userhash,arhetypes).await
 }

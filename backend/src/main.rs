@@ -11,7 +11,6 @@ async fn main() -> std::io::Result<()> { //Setting route services
             .wrap(cors)
             .service(api::api_handler::question_sender)
             .service(api::api_handler::game_sender)
-            .service(api::api_handler::character_sender)
     })
     .bind(("127.0.0.1", 8080))?
     .run()
