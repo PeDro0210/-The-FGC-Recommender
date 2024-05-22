@@ -5,8 +5,11 @@ import "../styles/Results/ResultContainer.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { useEffect, useState} from 'react';
+import LoadingCircle from "../styles/extras/LoadCircleFile"
 
 const ResultsContainer = ({gameslist, archetypeslist}) => {
+    
+    // General settings for the slider
     const sliderSettings = {
         dots: true,
         infinite: true,
@@ -34,36 +37,29 @@ const ResultsContainer = ({gameslist, archetypeslist}) => {
         ]
     };
 
-    // Just for testing, change to the Fetching Function
-    // const games = [
-    // {
-    // name: "Tekken 7",
-    // image_url: "https://media.discordapp.net/attachments/1239767599986905149/1239767960240001136/4yfeeKKfJdD5WzDQsoiM3xrcqPlpDLm7.jpeg?ex=664e02a3&is=664cb123&hm=3a57c37102cbea0855c03119d27872d8c77d0b24f1fe8bad47e0adaf67343e39&=&format=webp",
-    // characters: [
-    //     { name: "Kazuya", image_url: "https://media.discordapp.net/attachments/1239767599986905149/1240321229110378536/Kazuya_1.png?ex=664e0ba9&is=664cba29&hm=9af97a2d0d46a6cef2b0997648a73a5681e07f38c2a1bc904f34fd01013ea3d4&=&format=webp&quality=lossless" },
-    //     { name: "Heihachi", image_url: "https://media.discordapp.net/attachments/1239767599986905149/1240319142851248179/Heihachi.jpg?ex=664e09b7&is=664cb837&hm=6081977d46030e8b8d127b94c4bcdecbc5365a6cc501352bbf7828fb7a9b4a61&=&format=webp" },
-    //     ],
-        
-
-    // }
-    // ];
 
     const [games, setGameList]  = useState([]);
-
+    const [loading, setLoading] = useState(true);
     useEffect(() => {
         fetch(`http://127.0.0.1:8080/GetGames/`+gameslist+`/`+archetypeslist)
         .then(response => response.json())
         .then(data => {
-            setGameList(data)
+            setGameList(data);
+            setLoading(false);
         })
         .catch(error => {
           console.log(error);
         });
     }, []);
 
+    const RestartPage = () => {
+        window.location.reload();
+    }
+
     return (
         <div className="results-container">
-            {games.map((game, index) => (
+            {loading && <LoadingCircle />}
+            {!loading && games.map((game, index) => (
                 <div key={index} className="game-container">
                     <div className="cover-container">
                         <img src={game.image_url} alt={game.name} className="cover-image" />
@@ -86,7 +82,10 @@ const ResultsContainer = ({gameslist, archetypeslist}) => {
                         <p>No hay personajes para este juego</p>
                     )}
                 </div>
-            ))}
+            )
+            )}
+            {!loading && <button onClick={RestartPage} className="button">Vuelve a tomar el test</button>}
+
         </div>
     );
 };

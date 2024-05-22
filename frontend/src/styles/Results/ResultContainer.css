@@ -64,13 +64,11 @@
   /* ResultsContainer Styles */
   .results-container {
     padding: 2rem;
-    background-color: #50349e25;
     opacity: 0.9;
   }
   
   .game-container {
-    margin-bottom: 2rem;
-    opacity: 0.7;
+    margin-bottom: 2rem;;
   }
   
   .cover-container {
@@ -113,3 +111,18 @@
   .slick-prev, .slick-next {
     color: #333;
   }
+
+  .button {
+    background-color: #008891;
+    border: none;
+    color: #E7E7DE;
+    padding: 16px 40px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    font-size: 20px;
+    font: 900 2.5vw starbirlregular;
+}

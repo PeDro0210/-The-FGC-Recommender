@@ -22,7 +22,7 @@ export default function Questions({handlerpasco}) {   //inside joke
     
 
     const [QuestionList, setQuestionList]  = useState([]);
-
+    
 
 
     // Fetching the data
