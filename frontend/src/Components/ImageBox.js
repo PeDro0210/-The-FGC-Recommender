@@ -10,7 +10,7 @@ import React from 'react';
  */
 
 export function ImageBox({ image, NumberOfImage, Name, Size }) { // the TypeOfBox is to differentiate between game box and character box
-
+    
     return (
         <>
             <div className="image-container">
