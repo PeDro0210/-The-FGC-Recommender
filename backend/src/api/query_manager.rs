@@ -87,7 +87,9 @@ async fn jaccard_similarity_query(userhash: String, archetypes: Vec<String>) -> 
     
     MATCH (game:Reconode)
     WHERE game.name IN UnionJuegosUsuario2
-    RETURN game")
+    WITH game, rand() as r
+    ORDER BY r
+    RETURN game LIMIT 10;")
     .param("user", userhash))
     .await.unwrap();
     

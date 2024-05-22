@@ -7,12 +7,11 @@
                     "En un entorno el cual me pueda mover bastante tridiemensionalmente",
                     "Rapido, donde no haya tanto tiempo para pensar y mas para reaccionar"
                     ],
-        "points":[["CrossOver","2D","Anime","Fast-paced"],
-        ["2D","3D","Footsies","SlowPaced"],
+        "points":[["AirDashers","Fast-paced"],
+        ["3D","Footsies","SlowPaced","Installbased"],
         ["3D","Footsies"],
-        ["CrossOver","2D","Anime","Fast-paced", "AirDashers"]]
+        ["CrossOver","Anime","Fast-paced", "AirDashers"]]
     },
-
     {
         "question":"Que clase de acercamiento en general de combate te gusta mas?",
         "answears":[
@@ -21,10 +20,23 @@
                 "Que sea un poco mas pausado, donde pueda pensar un poco mas en mis movimientos",
                 "Ver esos momentos donde tenga la oportunidad de pegar y que mi oponente no pueda hacer nada"
         ],
-        "points":[["2D","3D","Footsies","SlowPaced","WeaponBased"],
-        ["2D","Anime","Fast-paced","AirDashers"],
+        "points":[["3D","Footsies","SlowPaced","WeaponBased"],
+        ["Anime","Fast-paced","AirDashers"],
         ["3D","Footsies","WeaponBased"],
-        ["2D","WeaponBased"]]
+        ["WeaponBased"]]
+    },
+    {
+        "question":"¿Que prefieres en un juego de pelea, rapidez y accion constante o un enfoque mas estrategico?",
+        "answears":[
+                "La Rapidez y la accion constante, no me gusta esperar",
+                "Un enfoque más estrategico, donde pueda pensar mis movimientos",
+                "Una combinacion de ambos, donde pueda pensar y reaccionar rapidamente para hacer un combo espectacular",
+                "Super estrategico, donde pueda pensar bastante mis movimientos y los de mi oponente"
+        ],
+        "points":[["CrossOver","Anime","Fast-paced"],
+        ["3D","Footsies","SlowPaced"],
+        ["CrossOver","Anime","Fast-paced", "AirDashers"],
+        ["3D","Footsies","WeaponBased"]]
     }
 
 ]

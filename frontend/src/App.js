@@ -1,17 +1,20 @@
 import React from 'react';
 import "../src/styles/app.css";
-import { Questions } from './Pages/QuestionsContainer';
+import  Questions  from './Pages/QuestionsContainer';
+import ResultsContainer from './Pages/ResultsContainer';
 import {useState} from 'react';
 
 function App() {
 
 
     // eslint-disable-next-line
-    const [Categories, setCategories] = useState({ Categories: [], Archetype: []});
+    const [AppGeneral, setAppGeneral] = useState({  Categories: [], 
+                                                    Archetype: [],
+                                                    QuestionsInstance:true});
 
 
     const handleCategoriesData = (data) => {
-        setCategories(data);
+        setAppGeneral(data);
         console.log(data);
       };
 
@@ -26,12 +29,13 @@ function App() {
 
         <div className="Content">
                 {/* Intregate the Image Container */}
-            <Questions handlerpasco={handleCategoriesData}/>{/*This is how you instanciate a component*/} 
-            
+                {AppGeneral.QuestionsInstance && <Questions handlerpasco={handleCategoriesData}/>}
+                {!AppGeneral.QuestionsInstance && <ResultsContainer gameslist={AppGeneral.Categories} archetypeslist={AppGeneral.Archetype}/>}
+                       
         </div>
 
         <div className = "Footer-one">
-            <h1>idunno what to add here RN NGL</h1>
+            <h1>WIP, there will be cool things in here</h1>
             {/* 
                                         |-----------------------------------------------------------|<-here starts de footer
                                         Maybe the README file and a donation button (no se preocupen de ese lado, yo de eso me encargare en el futuro)

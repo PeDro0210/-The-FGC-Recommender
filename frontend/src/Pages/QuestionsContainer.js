@@ -4,7 +4,7 @@ import { useEffect, useState} from 'react';
 
 
 
-export function Questions({handlerpasco}) {   //inside joke  
+export default function Questions({handlerpasco}) {   //inside joke  
     // JSON object that will contain the categories and the points that it gives to that category
     let QuestionCategories = {
         "Categories":["2D","3D","TagTeam","AirDashers","Anime","WeaponBased","Fast-paced","Footsies","SlowPaced","Installbased","CrossOver"],   
