@@ -22,7 +22,7 @@ class creating_channel(commands.Cog):
         # Iterate over the rows in the dataframe
         for index, row in df.iterrows():
             print(f"Creating channel {index + 1}/{len(df)}")
-            channel_name = row['Games'].strip()
+            channel_name = row['Games'].strip().replace(" ", "-").lower()
 
             # Check if the channel already exists in the category
             existing_channel = discord.utils.get(category.channels, name=channel_name)
