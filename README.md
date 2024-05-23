@@ -34,3 +34,6 @@ Follow these instructions to set up the local development environment for your p
 
 Both the backend and frontend should now be running. Access the frontend via the browser at the specified local address.
 
+###NOTE: see all branches to see the contributions
+
+###NOTE: Some images are wrong, but that's because the way they were fetched
