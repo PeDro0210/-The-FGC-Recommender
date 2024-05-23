@@ -37,6 +37,68 @@
         ["3D","Footsies","SlowPaced"],
         ["CrossOver","Anime","Fast-paced", "AirDashers"],
         ["3D","Footsies","WeaponBased"]]
+    },
+    {
+        "question":"Cual es tu preferencia de controles en videojuegos?",
+        "answears":["Mas tradicionales con movimientos especiales",
+                    "Que requieren combinaciones específicas",
+                    "Controles más accesibles con movimientos simplificados",
+                    "Controles que no requieren una combinacion en especifico"
+                    ],
+        "points":[["SlowPaced"],
+        ["AirDashers", "Installbased"],
+        ["SlowPaced", "WeaponBased"],
+        ["Fast-paced"]]
+    },
+
+{
+        "question":"Que estetica o jugabilidad de personajes te gusta jugar en otros videojuegos?",
+        "answears":["Personajes Famosos",
+                    "Personajes Anime",
+                    "Cambio de Personajes durante pelea",
+                    "Personajes con diferentes Armas"
+                    ],
+        "points":[["Crossover"],
+        ["Anime"],
+        ["TagTeam"],
+        ["WeaponBased"]]
+    },
+    {
+        "question":"Cual es tu preferencia en graficos de un juego?",
+        "answears":["Graficos Realistas",
+                    "Estilos Artisticos Unicos",
+                    "Anime",
+                    "Estilizados Alternativos"
+                    ],
+        "points":[["3D"],
+        ["2D"],
+        ["Anime"],
+        ["Installbased"]]
+    },
+    {
+        "question": "¿Te importa mucho la historia y la narrativa en los juegos ?",
+        "answears":["Me gustan las historias que ya conozco",
+                    "Me gustan mucho las narrativas Japonesas'",
+                    "Estoy dispuesto a sumergirme en la historia de nuevos juegos",
+                    "Es algo muy secundario para mi"
+                    ],
+        "points":[["CrossOver"],
+        ["Anime"],
+        ["SlowPaced"],
+        ["Fast-paced"]]
+    },
+    {
+        "question": "Te importa mucho la historia y la narrativa en los juegos ?",
+        "answears":["Me gustaria probar nuevas mecanicas",
+                    "Me gustan mucho las mecanicas clasicas",
+                    "Estoy experimentando con mecanicas en juegos de pelea",
+                    "Soy nuevo en los juegos de pelea"
+                    ],
+        "points":[["Footsies"],
+        ["2D","CrossOver"],
+        ["Installbased", "Fast-paced"],
+        ["WeaponBased", "SlowPaced"]]
     }
+
 
 ]
