@@ -125,10 +125,11 @@ pub async fn fetching_characters(game_name: String, archetypes: Vec<String>) -> 
     // Simple ass query
     // Is just to simple to over explain
     let mut result = graph.execute(query("
-    MATCH (u:Character)-[:From]->(t:Reconode{name:$game})
-    WHERE ANY(archetype IN u.archetypes WHERE archetype IN $archetypes)
-    RETURN u.name, u.image_link
-        ")
+        MATCH (u:Character)-[:From]->(t:Reconode{name:$game})
+        RETURN u.name
+        ORDER BY rand()
+        LIMIT 25
+            ")
         .param("game",game_name)
         .param("archetypes",archetypes))
         .await.unwrap();
@@ -141,7 +142,7 @@ pub async fn fetching_characters(game_name: String, archetypes: Vec<String>) -> 
                     // Object structure for characters, with there keys for getting the info
                     let character = Character {
                         name: result.get::<String>("u.name").unwrap(),
-                        image_url: result.get::<String>("u.image_link").unwrap(),
+                        image_url: String::from("WIP"), // Change &"WIP" to String::from("WIP")
                     };
                     character_vec.push(character);
                 },

@@ -66,7 +66,7 @@ const ResultsContainer = ({gameslist, archetypeslist}) => {
                         <p className="game-name">{game.name}</p>
                     </div>
                     {/* We taking this cause of time */}
-                    {/* {game.characters.length > 0 ? (
+                    {game.characters.length > 0 ? (
                         <Slider {...sliderSettings}>
                             {game.characters.map((character, charIndex) => (
                                 <div key={charIndex}>
@@ -81,7 +81,7 @@ const ResultsContainer = ({gameslist, archetypeslist}) => {
                         </Slider>
                     ) : (
                         <p>No hay personajes para este juego</p>
-                    )} */}
+                    )}
                 </div>
             )
             )}
