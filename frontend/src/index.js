@@ -1,13 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './styles/index.css';
-import App from './App';
+import RecomendationPage from './Pages/RecomendationPage';
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
+// TODO: Add routing for Login, Register pages, RecomendationPage and UserPage
 root.render(
   <React.StrictMode>
-    <App />
+    <RecomendationPage />
   </React.StrictMode>
 );
 

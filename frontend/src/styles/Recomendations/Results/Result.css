@@ -1,0 +1,22 @@
+.image-container {
+    position: relative;
+    width: 90%;
+    height: 80%;
+    padding-bottom: 1%;
+    background: linear-gradient(45deg, #242327, #241c25); /* Transparent background similar to the main content background color */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    box-sizing: border-box;
+    margin: 1rem;
+  }
+
+.name-container {
+    text-align: center;
+    margin-top: 0.5rem;
+    background: linear-gradient(45deg, #220a8f, #a310ae); /* Gradient similar to the main content background color */
+    padding: 0.002rem;
+    border-radius: 20px;
+    width: 99%;
+}

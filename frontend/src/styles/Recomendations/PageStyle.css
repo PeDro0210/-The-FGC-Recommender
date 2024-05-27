@@ -1,0 +1,165 @@
+/* TODO: comment this shit later */
+.main-content {
+	text-align: center;
+	text-transform: uppercase;
+	scroll-snap-type: y mandatory;
+	position: relative;
+	height: 100vh;
+	overflow-y: scroll;
+  background-color: #262335;
+}
+
+@font-face {
+  font-family: 'street_fighter_alpha_3_mediRg';
+  src: url('/public/Fonts/street-fighter-alpha-3-medium-webfont.woff2') format('woff2'),
+       url('/public/Fonts/street-fighter-alpha-3-medium-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+@font-face {
+  font-family: 'starbirlregular';
+  src: url('/public/Fonts/starbirl-webfont.woff2') format('woff2'),
+       url('/public/Fonts/starbirl-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+.Header-one {
+    padding: 10vw;
+    position: relative;
+    -webkit-mask-image: -webkit-gradient(linear, center top, center bottom, 
+    color-stop(1.00,  rgba(0,0,0,0)),
+    color-stop(0.00,  rgba(0,0,0,1)));
+    .rounded-box {
+      filter: contrast(1.2) brightness(0.8) saturate(1.5) hue-rotate(10deg);
+      position: relative;
+      align-self: center;
+      top: -5vw;
+      opacity: 0.8;
+      width: 75vw;
+      height: 10vw;
+      background-color: #242434;
+      border: 2px solid #242434;
+      border-radius: 15px;
+      h1 {
+        filter: contrast(1.2) brightness(0.8) saturate(1.5) hue-rotate(10deg);
+        opacity: 1;
+        position: relative;
+        top: 25%;
+        font: 900 2.5vw "starbirlregular";
+        color: white;
+        outline: blue;
+        text-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+      }
+    }
+  }
+  
+
+.Header-one:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url(https://giffiles.alphacoders.com/130/13038.gif) center center / cover;
+  mix-blend-mode: overlay;
+  animation: flicker 0.15s infinite;
+}
+
+@keyframes flicker {
+    0% {
+    opacity: 0.27861;
+    }
+    5% {
+    opacity: 0.34769;
+    }
+    10% {
+    opacity: 0.23604;
+    }
+    15% {
+    opacity: 0.90626;
+    }
+    20% {
+    opacity: 0.18128;
+    }
+    25% {
+    opacity: 0.83891;
+    }
+    30% {
+    opacity: 0.65583;
+    }
+    35% {
+    opacity: 0.67807;
+    }
+    40% {
+    opacity: 0.26559;
+    }
+    45% {
+    opacity: 0.84693;
+    }
+    50% {
+    opacity: 0.96019;
+    }
+    55% {
+    opacity: 0.08594;
+    }
+    60% {
+    opacity: 0.20313;
+    }
+    65% {
+    opacity: 0.71988;
+    }
+    70% {
+    opacity: 0.53455;
+    }
+    75% {
+    opacity: 0.37288;
+    }
+    80% {
+    opacity: 0.71428;
+    }
+    85% {
+    opacity: 0.70419;
+    }
+    90% {
+    opacity: 0.7003;
+    }
+    95% {
+    opacity: 0.36108;
+    }
+    100% {
+    opacity: 0.24387;
+    }
+  } /* The flickering will depend on your framerate */
+
+
+.Header-one .word {
+  display: flex;
+  align-items: center;
+  max-width: 500px;
+  margin: auto;
+  /* Additional styling for the CRT effect */
+  filter: contrast(1.2) brightness(0.8) saturate(1.5) hue-rotate(10deg);
+}
+
+
+/* See how to make that the fonts download automatically */
+.Footer-one{
+    padding: 10vw;
+    position: relative;
+    background: linear-gradient(to top, #0d0d0d, #262335);
+    opacity: 0.8;
+    h1 {
+        filter: contrast(1.2) brightness(0.8) saturate(1.5) hue-rotate(10deg);
+        opacity: 1;
+        position: relative;
+        color: white;
+        font: 900 2.5vw "street_fighter_alpha_3_mediRg";
+        outline: blue;
+        text-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    }
+}
