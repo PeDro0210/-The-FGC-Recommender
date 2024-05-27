@@ -1,0 +1,126 @@
+  .image-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 60%;
+  }
+  
+  .image-container {
+    position: relative;
+    width: 90%;
+    height: 80%;
+    padding-bottom: 1%;
+    background: linear-gradient(45deg, #242327, #241c25); /* Transparent background similar to the main content background color */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    box-sizing: border-box;
+    margin: 1rem;
+  }
+  
+  .image-container img {
+    max-width: 70%;
+    object-fit: contain;
+  }
+  
+  .name-container {
+    text-align: center;
+    margin-top: 0.5rem;
+    background: linear-gradient(45deg, #220a8f, #a310ae); /* Gradient similar to the main content background color */
+    padding: 0.002rem;
+    border-radius: 20px;
+    width: 99%;
+  }
+  
+  .name {
+    font-family: inherit;
+    font-size: 1rem;
+    color: #ffffff;
+    text-align: center;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 1200px) {
+    .image-container {
+        width: 50%;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .image-container {
+        width: 45%;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .image-container {
+        width: 90%;
+    }
+  }
+  
+  /* ResultsContainer Styles */
+  .results-container {
+    padding: 2rem;
+    opacity: 0.9;
+  }
+  
+  .game-container {
+    margin-bottom: 2rem;;
+  }
+  
+  .cover-container {
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+  
+  .cover-image {
+    width: 20%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+  }
+  
+  .game-name {
+    font-size: 1.5rem;
+    color: #ffffff;
+    margin-top: 0.5rem;
+    background: linear-gradient(45deg, #be444a, #4a030c);
+    border-spacing: 60px;
+  }
+  
+  .slick-slide > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .slick-slide img {
+    width: 100%;
+    height: auto;
+    max-width: 200px;
+    max-height: 200px;
+  }
+  
+  .slick-dots li button:before {
+    color: #333;
+  }
+  
+  .slick-prev, .slick-next {
+    color: #333;
+  }
+
+  .button {
+    background-color: #008891;
+    border: none;
+    color: #E7E7DE;
+    padding: 16px 40px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    font-size: 20px;
+    font: 900 2.5vw starbirlregular;
+}
