@@ -7,12 +7,12 @@ Tekken 5,2004,Data/Tekken 5.csv,https://storage.googleapis.com/fgc-recommendator
 Tekken 6,2007,Data/Tekken 6.csv,https://storage.googleapis.com/fgc-recommendator.appspot.com/Tekken-6-Cover.jpg,,X,,,,,,X,,,
 Tekken 7,2015,Data/Tekken 7.csv,https://storage.googleapis.com/fgc-recommendator.appspot.com/Tekken-7-Cover.jpg,,X,,,,,X,X,,,
 Tekken 8,2024,Data/Tekken 8.csv,https://storage.googleapis.com/fgc-recommendator.appspot.com/Tekken-8-Cover.jpg,,X,,,,,X,,,,
-Tekken 5: Dark Resurrection,2005,Data/Tekken 5: Dark Resurrection.csv,https://storage.googleapis.com/fgc-recommendator.appspot.com/Tekken-5-Dark-Resurrection-Cover.jpg,,X,,,,,,X,,,
-Tekken 6: Bloodline Rebellion,2008,Data/Tekken 6: Bloodline Rebellion.csv,https://storage.googleapis.com/fgc-recommendator.appspot.com/Tekken-6-Bloodline-Rebellion-Cover.jpg,,X,,,,,,X,,,
-Tekken 7: Fated Retribution,2016,Data/Tekken 7: Fated Retribution.csv,https://storage.googleapis.com/fgc-recommendator.appspot.com/Tekken-7-Fated-Retribution-Cover.jpg,,X,,,,,X,,,,
+Tekken 5 Dark Resurrection,2005,Data/Tekken 5: Dark Resurrection.csv,https://storage.googleapis.com/fgc-recommendator.appspot.com/Tekken-5-Dark-Resurrection-Cover.jpg,,X,,,,,,X,,,
+Tekken 6 Bloodline Rebellion,2008,Data/Tekken 6: Bloodline Rebellion.csv,https://storage.googleapis.com/fgc-recommendator.appspot.com/Tekken-6-Bloodline-Rebellion-Cover.jpg,,X,,,,,,X,,,
+Tekken 7 Fated Retribution,2016,Data/Tekken 7: Fated Retribution.csv,https://storage.googleapis.com/fgc-recommendator.appspot.com/Tekken-7-Fated-Retribution-Cover.jpg,,X,,,,,X,,,,
 Tekken Hybrid,2011,Data/Tekken Hybrid.csv,https://storage.googleapis.com/fgc-recommendator.appspot.com/Tekken-Hybrid-Cover.jpg,,X,,,,,,X,,,
 Tekken Tag Tournament 2 Unlimited,2012,Data/Tekken Tag Tournament 2 Unlimited.csv,https://storage.googleapis.com/fgc-recommendator.appspot.com/Tekken-Tag-Tournament-2-Unlimited-Cover.jpg,,X,,,,,,X,,,
-Tekken 7: Fated Retribution,2016,Data/Tekken 7: Fated Retribution.csv,https://storage.googleapis.com/fgc-recommendator.appspot.com/Tekken-7-Fated-Retribution-Cover.jpg,,X,,,,,X,X,,,
+Tekken 7 Fated Retribution,2016,Data/Tekken 7: Fated Retribution.csv,https://storage.googleapis.com/fgc-recommendator.appspot.com/Tekken-7-Fated-Retribution-Cover.jpg,,X,,,,,X,X,,,
 Tekken Tag Tournament,1999,Data/Tekken Tag Tournament.csv,https://storage.googleapis.com/fgc-recommendator.appspot.com/Tekken-Tag-Tournament-Cover.jpg,,X,X,,,,,X,,,
 Tekken Tag Tournament 2,2011,Data/Tekken Tag Tournament 2.csv,https://storage.googleapis.com/fgc-recommendator.appspot.com/Tekken-Tag-Tournament-2-Cover.jpg,,X,X,,,,,X,,,
 Guilty Gear ORIGINAL,1998,Data/Guilty Gear.csv,https://storage.googleapis.com/fgc-recommendator.appspot.com/Guilty-Gear-ORIGINAL-Cover.jpg,X,,,X,X,,X,,,,
@@ -25,7 +25,7 @@ X-Men vs Street Fighter,1996,Data/X-Men vs Street Fighter.csv,https://m.media-am
 Street Fighter,1987,Data/Street Fighter.csv,https://storage.googleapis.com/fgc-recommendator.appspot.com/Street-Fighter-Cover.jpg,X,,,,,,,,X,,
 Street Fighter II,1991,Data/Street Fighter II.csv,https://storage.googleapis.com/fgc-recommendator.appspot.com/Street-Fighter-II-Cover.jpg,X,,,,,,,,X,,
 Street Fighter Champion Edition,1992,Data/Street Fighter Champion Edition.csv,https://storage.googleapis.com/fgc-recommendator.appspot.com/Street-Fighter-Champion-Edition-Cover.jpg,X,,,,,,,,X,,
-Street Fighter II: Hyper Fighting,1992,Data/Street Fighter II: Hyper Fighting.csv,https://storage.googleapis.com/fgc-recommendator.appspot.com/Street-Fighter-II-Hyper-Fighting-Cover.jpg,X,,,,,,,,X,,
+Street Fighter II Hyper Fighting,1992,Data/Street Fighter II: Hyper Fighting.csv,https://storage.googleapis.com/fgc-recommendator.appspot.com/Street-Fighter-II-Hyper-Fighting-Cover.jpg,X,,,,,,,,X,,
 Hyper Street Fighter II,2003,Data/Hyper Street Fighter II.csv,https://storage.googleapis.com/fgc-recommendator.appspot.com/Hyper-Street-Fighter-II-Cover.jpg,X,,,,,,,,X,,
 Super Street Fighter II,1993,Data/Super Street Fighter II.csv,https://storage.googleapis.com/fgc-recommendator.appspot.com/Super-Street-Fighter-II-Cover.jpg,X,,,,,,,,X,,
 Super Street Fighter II Turbo,1994,Data/Super Street Fighter II Turbo.csv,https://storage.googleapis.com/fgc-recommendator.appspot.com/Super-Street-Fighter-II-Turbo-Cover.jpg,X,,,,,,,,X,,
@@ -63,41 +63,41 @@ The King of Fighters XIII,2012,Data/The King of Fighters XIII.csv,https://storag
 The King of Fighters XIV,2012,Data/The King of Fighters XIV.csv,https://storage.googleapis.com/fgc-recommendator.appspot.com/The-King-of-Fighters-XIV-Cover.jpg,X,,,,,,,X,,,X
 The King of Fighters XV,2012,Data/The King of Fighters XV.csv,https://storage.googleapis.com/fgc-recommendator.appspot.com/The-King-of-Fighters-XV-Cover.jpg,X,,,,,,X,X,,,X
 Red Earth,2012,Data/Red Earth.csv,https://storage.googleapis.com/fgc-recommendator.appspot.com/Red-Earth-Cover.jpg,X,,,,,X,,,X,,
-Darkstalkers: The Night Warriors,2012,Data/Darkstalkers: The Night Warriors.csv,https://storage.googleapis.com/fgc-recommendator.appspot.com/Darkstalkers-The-Night-Warriors-Cover.jpg,X,,,,,,X,,,,
-Night Warriors: Darkstalkers' Revenge,2012,Data/Night Warriors: Darkstalkers' Revenge.csv,https://storage.googleapis.com/fgc-recommendator.appspot.com/Night-Warriors-Darkstalkers%27-Revenge-Cover.jpg,X,,,,,,X,,,,
-Vampire Savior: The Lord of Vampire,2012,Data/Vampire Savior: The Lord of Vampire.csv,https://storage.googleapis.com/fgc-recommendator.appspot.com/Vampire-Savior-The-Lord-of-Vampire-Cover.png,X,,,,,,X,,,,
-Vampire Hunter 2: Darkstalkers' Revenge,2012,Data/Vampire Hunter 2: Darkstalkers' Revenge.csv,https://storage.googleapis.com/fgc-recommendator.appspot.com/Vampire-Hunter-2-Darkstalkers%27-Revenge-Cover.jpg,X,,,,,,X,,,,
-Vampire Savior 2: The Lord of Vampire,2012,Data/Vampire Savior 2: The Lord of Vampire.csv,https://storage.googleapis.com/fgc-recommendator.appspot.com/Vampire-Savior-2-The-Lord-of-Vampire-Cover.jpg,,,,,,,X,,,,
-Marvel Vs Capcom: Clash of Super Heroes,2012,Data/Marvel Vs Capcom: Clash of Super Heroes.csv,https://storage.googleapis.com/fgc-recommendator.appspot.com/Marvel-Vs-Capcom-Clash-of-Super-Heroes-Cover.jpg,X,,X,X,,,X,,,,X
-Marvel Vs Capcom 2: New Age of Heroes,2012,Data/Marvel Vs Capcom 2: New Age of Heroes.csv,https://storage.googleapis.com/fgc-recommendator.appspot.com/Marvel-Vs-Capcom-2-New-Age-of-Heroes-Cover.jpg,X,,X,X,,,X,,,,X
-Marvel Vs Capcom 3: Fate of Two Worlds,2012,Data/Marvel Vs Capcom 3: Fate of Two Worlds.csv,https://storage.googleapis.com/fgc-recommendator.appspot.com/Marvel-Vs-Capcom-3-Fate-of-Two-Worlds-Cover.jpg,X,,X,X,,,X,,,,X
+Darkstalkers The Night Warriors,2012,Data/Darkstalkers: The Night Warriors.csv,https://storage.googleapis.com/fgc-recommendator.appspot.com/Darkstalkers-The-Night-Warriors-Cover.jpg,X,,,,,,X,,,,
+Night Warriors Darkstalkers' Revenge,2012,Data/Night Warriors: Darkstalkers' Revenge.csv,https://storage.googleapis.com/fgc-recommendator.appspot.com/Night-Warriors-Darkstalkers%27-Revenge-Cover.jpg,X,,,,,,X,,,,
+Vampire Savior The Lord of Vampire,2012,Data/Vampire Savior: The Lord of Vampire.csv,https://storage.googleapis.com/fgc-recommendator.appspot.com/Vampire-Savior-The-Lord-of-Vampire-Cover.png,X,,,,,,X,,,,
+Vampire Hunter 2 Darkstalkers' Revenge,2012,Data/Vampire Hunter 2: Darkstalkers' Revenge.csv,https://storage.googleapis.com/fgc-recommendator.appspot.com/Vampire-Hunter-2-Darkstalkers%27-Revenge-Cover.jpg,X,,,,,,X,,,,
+Vampire Savior 2 The Lord of Vampire,2012,Data/Vampire Savior 2: The Lord of Vampire.csv,https://storage.googleapis.com/fgc-recommendator.appspot.com/Vampire-Savior-2-The-Lord-of-Vampire-Cover.jpg,,,,,,,X,,,,
+Marvel Vs Capcom Clash of Super Heroes,2012,Data/Marvel Vs Capcom: Clash of Super Heroes.csv,https://storage.googleapis.com/fgc-recommendator.appspot.com/Marvel-Vs-Capcom-Clash-of-Super-Heroes-Cover.jpg,X,,X,X,,,X,,,,X
+Marvel Vs Capcom 2 New Age of Heroes,2012,Data/Marvel Vs Capcom 2: New Age of Heroes.csv,https://storage.googleapis.com/fgc-recommendator.appspot.com/Marvel-Vs-Capcom-2-New-Age-of-Heroes-Cover.jpg,X,,X,X,,,X,,,,X
+Marvel Vs Capcom 3 Fate of Two Worlds,2012,Data/Marvel Vs Capcom 3: Fate of Two Worlds.csv,https://storage.googleapis.com/fgc-recommendator.appspot.com/Marvel-Vs-Capcom-3-Fate-of-Two-Worlds-Cover.jpg,X,,X,X,,,X,,,,X
 Ultimate Marvel Vs Capcom 3,2012,Data/Ultimate Marvel Vs Capcom 3.csv,https://storage.googleapis.com/fgc-recommendator.appspot.com/Ultimate-Marvel-Vs-Capcom-3-Cover.jpg,X,,X,X,,,X,,,,X
 Marvel Vs Capcom Infinite,2012,Data/Marvel Vs Capcom Infinite.csv,https://storage.googleapis.com/fgc-recommendator.appspot.com/Marvel-Vs-Capcom-Infinite-Cover.jpg,X,,X,X,,,X,,,,X
-Rival Schools: United by Fate,2012,Data/Rival Schools: United by Fate.csv,https://storage.googleapis.com/fgc-recommendator.appspot.com/Rival-Schools-United-by-Fate-Cover.jpg,,X,X,,X,,,,X,,X
+Rival Schools United by Fate,2012,Data/Rival Schools: United by Fate.csv,https://storage.googleapis.com/fgc-recommendator.appspot.com/Rival-Schools-United-by-Fate-Cover.jpg,,X,X,,X,,,,X,,X
 Project Justice,2012,Data/Project Justice.csv,https://storage.googleapis.com/fgc-recommendator.appspot.com/Project-Justice-Cover.jpg,,X,X,,X,,,,,,X
 Virtua Fighter,2012,Data/Virtua Fighter.csv,https://storage.googleapis.com/fgc-recommendator.appspot.com/Virtua-Fighter-Cover.jpg,,X,,,,,,X,X,,
 Virtua Fighter 2,2012,Data/Virtua Fighter 2.csv,https://storage.googleapis.com/fgc-recommendator.appspot.com/Virtua-Fighter-2-Cover.jpg,,X,,,,,,X,X,,
 Virtua Fighter 3,2012,Data/Virtua Fighter 3.csv,https://storage.googleapis.com/fgc-recommendator.appspot.com/Virtua-Fighter-3-Cover.jpg,,X,,,,,,X,X,,
 Virtua Fighter 4,2012,Data/Virtua Fighter 4.csv,https://storage.googleapis.com/fgc-recommendator.appspot.com/Virtua-Fighter-4-Cover.jpg,,X,,,,,,X,X,,
 Virtua Fighter 5,2012,Data/Virtua Fighter 5.csv,https://storage.googleapis.com/fgc-recommendator.appspot.com/Virtua-Fighter-5-Cover.png,,X,,,,,,X,X,,
-Granblue Fantasy: Versus,2012,Data/Granblue Fantasy: Versus.csv,https://storage.googleapis.com/fgc-recommendator.appspot.com/Granblue-Fantasy-Versus-Cover.jpg,X,,,,X,X,,,,,
-Grandblue Fantasy Versus:Rising,2012,Data/Grandblue Fantasy Versus:Rising.csv,https://storage.googleapis.com/fgc-recommendator.appspot.com/Grandblue-Fantasy-VersusRising-Cover.png,X,,,,X,X,,,,,
+Granblue Fantasy Versus,2012,Data/Granblue Fantasy: Versus.csv,https://storage.googleapis.com/fgc-recommendator.appspot.com/Granblue-Fantasy-Versus-Cover.jpg,X,,,,X,X,,,,,
+Grandblue Fantasy VersusRising,2012,Data/Grandblue Fantasy Versus:Rising.csv,https://storage.googleapis.com/fgc-recommendator.appspot.com/Grandblue-Fantasy-VersusRising-Cover.png,X,,,,X,X,,,,,
 Under Night In-Birth,2012,Data/Under Night In-Birth.csv,,X,,,X,X,,X,,,,
-Under Night In-Birth Exe:Late,2012,Data/Under Night In-Birth Exe:Late.csv,,X,,,X,X,,X,,,,
-UNDER NIGHT IN-BIRTH II Sys:Celes,2012,Data/UNDER NIGHT IN-BIRTH II Sys:Celes.csv,,X,,,X,X,,X,,,,
+Under Night In-Birth ExeLate,2012,Data/Under Night In-Birth Exe:Late.csv,,X,,,X,X,,X,,,,
+UNDER NIGHT IN-BIRTH II SysCeles,2012,Data/UNDER NIGHT IN-BIRTH II Sys:Celes.csv,,X,,,X,X,,X,,,,
 Melty Blood,2012,Data/Melty Blood.csv,https://storage.googleapis.com/fgc-recommendator.appspot.com/Melty-Blood-Cover.jpg,X,,,X,X,,X,,,,
-Melty Blood: Re-ACT,2012,Data/Melty Blood: Re-ACT.csv,,X,,,X,X,,X,,,,
-Melty Blood: Act Cadenza,2012,Data/Melty Blood: Act Cadenza.csv,https://storage.googleapis.com/fgc-recommendator.appspot.com/Melty-Blood-Act-Cadenza-Cover.jpg,X,,,X,X,,X,,,,
-Melty Blood: Act Cadenza Ver.B,2012,Data/Melty Blood: Act Cadenza Ver.B.csv,https://storage.googleapis.com/fgc-recommendator.appspot.com/Melty-Blood-Act-Cadenza-Ver.B-Cover.png,X,,,X,X,,X,,,,
-Melty Blood: Actress Again,2012,Data/Melty Blood: Actress Again.csv,https://storage.googleapis.com/fgc-recommendator.appspot.com/Melty-Blood-Actress-Again-Cover.jpg,X,,,X,X,,X,,,,
-Melty Blood: Actress Again Current Code,2012,Data/Melty Blood: Actress Again Current Code.csv,https://storage.googleapis.com/fgc-recommendator.appspot.com/Melty-Blood-Actress-Again-Current-Code-Cover.jpg,X,,,X,X,,X,,,,
-Melty Blood: Type Lumina,2012,Data/Melty Blood: Type Lumina.csv,https://storage.googleapis.com/fgc-recommendator.appspot.com/Melty-Blood-Type-Lumina-Cover.jpg,X,,,X,X,,X,,,,
+Melty Blood Re-ACT,2012,Data/Melty Blood: Re-ACT.csv,,X,,,X,X,,X,,,,
+Melty Blood Act Cadenza,2012,Data/Melty Blood: Act Cadenza.csv,https://storage.googleapis.com/fgc-recommendator.appspot.com/Melty-Blood-Act-Cadenza-Cover.jpg,X,,,X,X,,X,,,,
+Melty Blood Act Cadenza Ver.B,2012,Data/Melty Blood: Act Cadenza Ver.B.csv,https://storage.googleapis.com/fgc-recommendator.appspot.com/Melty-Blood-Act-Cadenza-Ver.B-Cover.png,X,,,X,X,,X,,,,
+Melty Blood Actress Again,2012,Data/Melty Blood: Actress Again.csv,https://storage.googleapis.com/fgc-recommendator.appspot.com/Melty-Blood-Actress-Again-Cover.jpg,X,,,X,X,,X,,,,
+Melty Blood Actress Again Current Code,2012,Data/Melty Blood: Actress Again Current Code.csv,https://storage.googleapis.com/fgc-recommendator.appspot.com/Melty-Blood-Actress-Again-Current-Code-Cover.jpg,X,,,X,X,,X,,,,
+Melty Blood Type Lumina,2012,Data/Melty Blood: Type Lumina.csv,https://storage.googleapis.com/fgc-recommendator.appspot.com/Melty-Blood-Type-Lumina-Cover.jpg,X,,,X,X,,X,,,,
 Pocket Rumble,2012,Data/Pocket Rumble.csv,https://storage.googleapis.com/fgc-recommendator.appspot.com/Pocket-Rumble-Cover.jpg,X,,,,,,,,X,,
-Capcom Vs SNK: Millennium Fight 2000,2012,Data/Capcom Vs SNK: Millennium Fight 2000.csv,https://storage.googleapis.com/fgc-recommendator.appspot.com/Capcom-Vs-SNK-Millennium-Fight-2000-Cover.jpg,X,,X,,,,X,X,,,X
-Capcom Vs SNK 2: Mark of the Millennium 2001,2012,Data/Capcom Vs SNK 2: Mark of the Millennium 2001.csv,https://storage.googleapis.com/fgc-recommendator.appspot.com/Capcom-Vs-SNK-2-Mark-of-the-Millennium-2001-Cover.jpg,X,,X,,,,X,X,,,X
-SNK Vs Capcom: SVC Chaos,2012,Data/SNK Vs Capcom: SVC Chaos.csv,https://storage.googleapis.com/fgc-recommendator.appspot.com/SNK-Vs-Capcom-SVC-Chaos-Cover.jpg,X,,X,,,,X,,,,X
-SNK Vs Capcom: The Match of the Millennium,2012,Data/SNK Vs Capcom: The Match of the Millennium.csv,https://storage.googleapis.com/fgc-recommendator.appspot.com/SNK-Vs-Capcom-The-Match-of-the-Millennium-Cover.jpg,X,,X,,,,X,,,,X
-SNK Heroines: Tag Team Frenzy,2012,Data/SNK Heroines: Tag Team Frenzy.csv,https://storage.googleapis.com/fgc-recommendator.appspot.com/SNK-Heroines-Tag-Team-Frenzy-Cover.jpg,X,,X,,,,,,,,X
+Capcom Vs SNK Millennium Fight 2000,2012,Data/Capcom Vs SNK: Millennium Fight 2000.csv,https://storage.googleapis.com/fgc-recommendator.appspot.com/Capcom-Vs-SNK-Millennium-Fight-2000-Cover.jpg,X,,X,,,,X,X,,,X
+Capcom Vs SNK 2 Mark of the Millennium 2001,2012,Data/Capcom Vs SNK 2: Mark of the Millennium 2001.csv,https://storage.googleapis.com/fgc-recommendator.appspot.com/Capcom-Vs-SNK-2-Mark-of-the-Millennium-2001-Cover.jpg,X,,X,,,,X,X,,,X
+SNK Vs Capcom SVC Chaos,2012,Data/SNK Vs Capcom: SVC Chaos.csv,https://storage.googleapis.com/fgc-recommendator.appspot.com/SNK-Vs-Capcom-SVC-Chaos-Cover.jpg,X,,X,,,,X,,,,X
+SNK Vs Capcom The Match of the Millennium,2012,Data/SNK Vs Capcom: The Match of the Millennium.csv,https://storage.googleapis.com/fgc-recommendator.appspot.com/SNK-Vs-Capcom-The-Match-of-the-Millennium-Cover.jpg,X,,X,,,,X,,,,X
+SNK Heroines Tag Team Frenzy,2012,Data/SNK Heroines: Tag Team Frenzy.csv,https://storage.googleapis.com/fgc-recommendator.appspot.com/SNK-Heroines-Tag-Team-Frenzy-Cover.jpg,X,,X,,,,,,,,X
 Mortal Kombat,2012,Data/Mortal Kombat.csv,https://storage.googleapis.com/fgc-recommendator.appspot.com/Mortal-Kombat-Cover.jpg,X,,,,,,,,X,,
 Mortal Kombat II,2012,Data/Mortal Kombat II.csv,https://storage.googleapis.com/fgc-recommendator.appspot.com/Mortal-Kombat-II-Cover.jpg,X,,,,,,,,X,,
 Mortal Kombat 3,2012,Data/Mortal Kombat 3.csv,https://storage.googleapis.com/fgc-recommendator.appspot.com/Mortal-Kombat-3-Cover.JPG,X,,,,,,,,X,,
@@ -105,9 +105,9 @@ Ultimate Mortal Kombat 3,2012,Data/Ultimate Mortal Kombat 3.csv,https://storage.
 Mortal Kombat Trilogy,2012,Data/Mortal Kombat Trilogy.csv,https://storage.googleapis.com/fgc-recommendator.appspot.com/Mortal-Kombat-Trilogy-Cover.jpg,X,,,,,,,,,,
 Mortal Kombat 4,2012,Data/Mortal Kombat 4.csv,https://storage.googleapis.com/fgc-recommendator.appspot.com/Mortal-Kombat-4-Cover.jpg,X,,,,,,,,,,
 Mortal Kombat Gold,2012,Data/Mortal Kombat Gold.csv,https://storage.googleapis.com/fgc-recommendator.appspot.com/Mortal-Kombat-Gold-Cover.jpg,X,,,,,,,,,,
-Mortal Kombat: Deadly Alliance,2012,Data/Mortal Kombat: Deadly Alliance.csv,https://storage.googleapis.com/fgc-recommendator.appspot.com/Mortal-Kombat-Deadly-Alliance-Cover.jpg,X,X,,,,,,,,,
-Mortal Kombat: Deception,2012,Data/Mortal Kombat: Deception.csv,https://storage.googleapis.com/fgc-recommendator.appspot.com/Mortal-Kombat-Deception-Cover.jpg,,X,,,,,,,,,
-Mortal Kombat: Armageddon,2012,Data/Mortal Kombat: Armageddon.csv,https://storage.googleapis.com/fgc-recommendator.appspot.com/Mortal-Kombat-Armageddon-Cover.jpg,X,X,,,,,,,,,
+Mortal Kombat Deadly Alliance,2012,Data/Mortal Kombat: Deadly Alliance.csv,https://storage.googleapis.com/fgc-recommendator.appspot.com/Mortal-Kombat-Deadly-Alliance-Cover.jpg,X,X,,,,,,,,,
+Mortal Kombat Deception,2012,Data/Mortal Kombat: Deception.csv,https://storage.googleapis.com/fgc-recommendator.appspot.com/Mortal-Kombat-Deception-Cover.jpg,,X,,,,,,,,,
+Mortal Kombat Armageddon,2012,Data/Mortal Kombat: Armageddon.csv,https://storage.googleapis.com/fgc-recommendator.appspot.com/Mortal-Kombat-Armageddon-Cover.jpg,X,X,,,,,,,,,
 Mortal Kombat Vs DC Universe,2012,Data/Mortal Kombat Vs DC Universe.csv,https://storage.googleapis.com/fgc-recommendator.appspot.com/Mortal-Kombat-Vs-DC-Universe-Cover.jpg,X,,,,,,,,,,X
 Mortal Kombat 9,2012,Data/Mortal Kombat 9.csv,https://storage.googleapis.com/fgc-recommendator.appspot.com/Mortal-Kombat-9-Cover.jpg,X,,,,,,,,,,
 Mortal Kombat X,2012,Data/Mortal Kombat X.csv,https://storage.googleapis.com/fgc-recommendator.appspot.com/Mortal-Kombat-X-Cover.jpg,X,X,,,,,,,,,
@@ -118,7 +118,7 @@ Killer Instinct Gold,2012,Data/Killer Instinct Gold.csv,https://storage.googleap
 Killer Instinct (2013),2012,Data/Killer Instinct (2013).csv,https://storage.googleapis.com/fgc-recommendator.appspot.com/Killer-Instinct-%282013%29-Cover.png,X,,,,,,,,,,
 Killer Instinct Classic,2012,Data/Killer Instinct Classic.csv,https://storage.googleapis.com/fgc-recommendator.appspot.com/Killer-Instinct-Classic-Cover.jpeg,X,,,,,,,,,,
 Killer Instinct 2 Classic,2012,Data/Killer Instinct 2 Classic.csv,https://storage.googleapis.com/fgc-recommendator.appspot.com/Killer-Instinct-2-Classic-Cover.jpg,X,,,,,,,,,,
-Injustice: Gods Among Us,2012,Data/Injustice: Gods Among Us.csv,https://storage.googleapis.com/fgc-recommendator.appspot.com/Injustice-Gods-Among-Us-Cover.jpg,X,,,,,,,,,,
+Injustice Gods Among Us,2012,Data/Injustice: Gods Among Us.csv,https://storage.googleapis.com/fgc-recommendator.appspot.com/Injustice-Gods-Among-Us-Cover.jpg,X,,,,,,,,,,
 Injustice 2,2012,Data/Injustice 2.csv,https://storage.googleapis.com/fgc-recommendator.appspot.com/Injustice-2-Cover.jpg,X,,,,,,,,,,
 Divekick,2012,Data/Divekick.csv,https://storage.googleapis.com/fgc-recommendator.appspot.com/Divekick-Cover.jpg,X,,,X,,,,,,,
 Fantasy Strike,2012,Data/Fantasy Strike.csv,https://storage.googleapis.com/fgc-recommendator.appspot.com/Fantasy-Strike-Cover.jpg,X,,,,,,,,X,,
@@ -133,20 +133,20 @@ Samurai Shodown 2019,2012,Data/Samurai Shodown 2019.csv,https://storage.googleap
 Bloody Roar,2012,Data/Bloody Roar.csv,https://storage.googleapis.com/fgc-recommendator.appspot.com/Bloody-Roar-Cover.jpg,,X,,,,,,,,X,
 Bloody Roar 2,2012,Data/Bloody Roar 2.csv,https://storage.googleapis.com/fgc-recommendator.appspot.com/Bloody-Roar-2-Cover.jpg,,X,,,,,,,,X,
 Bloody Roar 3,2012,Data/Bloody Roar 3.csv,https://storage.googleapis.com/fgc-recommendator.appspot.com/Bloody-Roar-3-Cover.jpg,,X,,,,,,,,X,
-Bloody Roar: Primaral Fury,2012,Data/Bloody Roar: Primaral Fury.csv,https://storage.googleapis.com/fgc-recommendator.appspot.com/Bloody-Roar-Primaral-Fury-Cover.png,,X,,,,,,,,X,
+Bloody Roar Primaral Fury,2012,Data/Bloody Roar: Primaral Fury.csv,https://storage.googleapis.com/fgc-recommendator.appspot.com/Bloody-Roar-Primaral-Fury-Cover.png,,X,,,,,,,,X,
 Bloddy Roar 4,2012,Data/Bloddy Roar 4.csv,https://storage.googleapis.com/fgc-recommendator.appspot.com/Bloddy-Roar-4-Cover.png,,X,,,,,,,,X,
-Blood Roar: Extreme,2012,Data/Blood Roar: Extreme.csv,https://storage.googleapis.com/fgc-recommendator.appspot.com/Blood-Roar-Extreme-Cover.jpg,,X,,,,,,,,X,
+Blood Roar Extreme,2012,Data/Blood Roar: Extreme.csv,https://storage.googleapis.com/fgc-recommendator.appspot.com/Blood-Roar-Extreme-Cover.jpg,,X,,,,,,,,X,
 Fatal Fury,2012,Data/Fatal Fury.csv,https://storage.googleapis.com/fgc-recommendator.appspot.com/Fatal-Fury-Cover.png,X,,,,,,,,,,
 Fatal Fury 2,2012,Data/Fatal Fury 2.csv,https://storage.googleapis.com/fgc-recommendator.appspot.com/Fatal-Fury-2-Cover.jpg,X,,,,,,,,,,
-Fatal Fury 3: Road to the Final Victory,2012,Data/Fatal Fury 3: Road to the Final Victory.csv,https://storage.googleapis.com/fgc-recommendator.appspot.com/Fatal-Fury-3-Road-to-the-Final-Victory-Cover.jpg,X,,,,,,,,,,
+Fatal Fury 3 Road to the Final Victory,2012,Data/Fatal Fury 3: Road to the Final Victory.csv,https://storage.googleapis.com/fgc-recommendator.appspot.com/Fatal-Fury-3-Road-to-the-Final-Victory-Cover.jpg,X,,,,,,,,,,
 Fatal Fury Special,2012,Data/Fatal Fury Special.csv,https://storage.googleapis.com/fgc-recommendator.appspot.com/Fatal-Fury-Special-Cover.jpg,X,,,,,,,,,,
 Real Bout Fatal Fury,2012,Data/Real Bout Fatal Fury.csv,https://storage.googleapis.com/fgc-recommendator.appspot.com/Real-Bout-Fatal-Fury-Cover.jpg,X,,,,,,,X,,,
 Real Bout Fatal Fury Special,2012,Data/Real Bout Fatal Fury Special.csv,https://storage.googleapis.com/fgc-recommendator.appspot.com/Real-Bout-Fatal-Fury-Special-Cover.jpg,X,,,,,,,X,,,
-Real Bout Fatal Fury 2: The Newcomers,2012,Data/Real Bout Fatal Fury 2: The Newcomers.csv,https://storage.googleapis.com/fgc-recommendator.appspot.com/Real-Bout-Fatal-Fury-2-The-Newcomers-Cover.jpg,X,,,,,,,X,,,
-Fatal Fury: Wild Ambition,2012,Data/Fatal Fury: Wild Ambition.csv,https://storage.googleapis.com/fgc-recommendator.appspot.com/Fatal-Fury-Wild-Ambition-Cover.jpg,X,,,,,,,X,,,
-Garou: Mark of the Wolves,2012,Data/Garou: Mark of the Wolves.csv,https://storage.googleapis.com/fgc-recommendator.appspot.com/Garou-Mark-of-the-Wolves-Cover.jpg,X,,,,,,,X,,,
-JoJo's Bizarre Adventure: All-Star Battle R,2012,Data/JoJo's Bizarre Adventure: All-Star Battle R.csv,,,X,X,,X,,,,,,
-JoJo's Bizarre Adventure: Heritage for the Future,2012,Data/JoJo's Bizarre Adventure: Heritage for the Future.csv,https://storage.googleapis.com/fgc-recommendator.appspot.com/JoJo%27s-Bizarre-Adventure-Heritage-for-the-Future-Cover.jpg,,,,,X,,,X,,,
+Real Bout Fatal Fury 2 The Newcomers,2012,Data/Real Bout Fatal Fury 2: The Newcomers.csv,https://storage.googleapis.com/fgc-recommendator.appspot.com/Real-Bout-Fatal-Fury-2-The-Newcomers-Cover.jpg,X,,,,,,,X,,,
+Fatal Fury Wild Ambition,2012,Data/Fatal Fury: Wild Ambition.csv,https://storage.googleapis.com/fgc-recommendator.appspot.com/Fatal-Fury-Wild-Ambition-Cover.jpg,X,,,,,,,X,,,
+Garou Mark of the Wolves,2012,Data/Garou: Mark of the Wolves.csv,https://storage.googleapis.com/fgc-recommendator.appspot.com/Garou-Mark-of-the-Wolves-Cover.jpg,X,,,,,,,X,,,
+JoJo's Bizarre Adventure All-Star Battle R,2012,Data/JoJo's Bizarre Adventure: All-Star Battle R.csv,,,X,X,,X,,,,,,
+JoJo's Bizarre Adventure Heritage for the Future,2012,Data/JoJo's Bizarre Adventure: Heritage for the Future.csv,https://storage.googleapis.com/fgc-recommendator.appspot.com/JoJo%27s-Bizarre-Adventure-Heritage-for-the-Future-Cover.jpg,,,,,X,,,X,,,
 Footsies,2012,Data/Footsies.csv,https://storage.googleapis.com/fgc-recommendator.appspot.com/Footsies-Cover.jpg,X,,,,,,,X,,,
 Persona 4 Arena Ultimax,2012,Data/Persona 4 Arena Ultimax.csv,https://storage.googleapis.com/fgc-recommendator.appspot.com/Persona-4-Arena-Ultimax-Cover.jpg,X,,,X,X,,X,,,,
 Soul Calibur,2012,Data/Soul Calibur.csv,https://storage.googleapis.com/fgc-recommendator.appspot.com/Soul-Calibur-Cover.jpg,,X,,,,X,,,X,,
@@ -155,10 +155,10 @@ Soul Calibur III,2012,Data/Soul Calibur III.csv,https://storage.googleapis.com/f
 Soul Calibur IV,2012,Data/Soul Calibur IV.csv,https://storage.googleapis.com/fgc-recommendator.appspot.com/Soul-Calibur-IV-Cover.jpg,,X,,,,X,,,X,,
 Soul Calibur V,2012,Data/Soul Calibur V.csv,https://storage.googleapis.com/fgc-recommendator.appspot.com/Soul-Calibur-V-Cover.jpg,,X,,,,X,,,X,,
 Soul Calibur VI,2012,Data/Soul Calibur VI.csv,https://storage.googleapis.com/fgc-recommendator.appspot.com/Soul-Calibur-VI-Cover.png,,X,,,,X,,,X,,
-Soul Calibur: Broken Destiny,2012,Data/Soul Calibur: Broken Destiny.csv,https://storage.googleapis.com/fgc-recommendator.appspot.com/Soul-Calibur-Broken-Destiny-Cover.jpg,,X,,,,X,,,X,,
-Soul Calibur: Lost Swords,2012,Data/Soul Calibur: Lost Swords.csv,https://storage.googleapis.com/fgc-recommendator.appspot.com/Soul-Calibur-Lost-Swords-Cover.jpg,,X,,,,X,,,X,,
-Soul Calibur: Unbreakable Soul,2012,Data/Soul Calibur: Unbreakable Soul.csv,https://storage.googleapis.com/fgc-recommendator.appspot.com/Soul-Calibur-Unbreakable-Soul-Cover.jpg,,X,,,,X,,,X,,
-Soul Calibur: Legends,2012,Data/Soul Calibur: Legends.csv,https://storage.googleapis.com/fgc-recommendator.appspot.com/Soul-Calibur-Legends-Cover.jpg,,X,,,,X,,,X,,
+Soul Calibur Broken Destiny,2012,Data/Soul Calibur: Broken Destiny.csv,https://storage.googleapis.com/fgc-recommendator.appspot.com/Soul-Calibur-Broken-Destiny-Cover.jpg,,X,,,,X,,,X,,
+Soul Calibur Lost Swords,2012,Data/Soul Calibur: Lost Swords.csv,https://storage.googleapis.com/fgc-recommendator.appspot.com/Soul-Calibur-Lost-Swords-Cover.jpg,,X,,,,X,,,X,,
+Soul Calibur Unbreakable Soul,2012,Data/Soul Calibur: Unbreakable Soul.csv,https://storage.googleapis.com/fgc-recommendator.appspot.com/Soul-Calibur-Unbreakable-Soul-Cover.jpg,,X,,,,X,,,X,,
+Soul Calibur Legends,2012,Data/Soul Calibur: Legends.csv,https://storage.googleapis.com/fgc-recommendator.appspot.com/Soul-Calibur-Legends-Cover.jpg,,X,,,,X,,,X,,
 Dead or Alive,2012,Data/Dead or Alive.csv,https://storage.googleapis.com/fgc-recommendator.appspot.com/Dead-or-Alive-Cover.jpg,,X,,,,,,,X,,
 Dead or Alive 2,2012,Data/Dead or Alive 2.csv,https://storage.googleapis.com/fgc-recommendator.appspot.com/Dead-or-Alive-2-Cover.jpg,,X,,,,,,,X,,
 Dead or Alive 3,2012,Data/Dead or Alive 3.csv,https://storage.googleapis.com/fgc-recommendator.appspot.com/Dead-or-Alive-3-Cover.jpg,,X,,,,,,,X,,
@@ -171,26 +171,26 @@ Skullgirls 2nd Encore,2012,Data/Skullgirls 2nd Encore.csv,https://storage.google
 Art of Fighting,2012,Data/Art of Fighting.csv,https://storage.googleapis.com/fgc-recommendator.appspot.com/Art-of-Fighting-Cover.jpg,X,,,,,,,X,X,,
 Art of Fighting 2,2012,Data/Art of Fighting 2.csv,https://storage.googleapis.com/fgc-recommendator.appspot.com/Art-of-Fighting-2-Cover.jpg,X,,,,,,,X,X,,
 Art of Fighting 3,2012,Data/Art of Fighting 3.csv,https://storage.googleapis.com/fgc-recommendator.appspot.com/Art-of-Fighting-3-Cover.jpg,X,,,,,,,X,X,,
-BlazBlue: Calamity Trigger,2012,Data/BlazBlue: Calamity Trigger.csv,https://storage.googleapis.com/fgc-recommendator.appspot.com/BlazBlue-Calamity-Trigger-Cover.jpg,X,,,X,X,,X,,,,
-BlazBlue: Continuum Shift,2012,Data/BlazBlue: Continuum Shift.csv,https://storage.googleapis.com/fgc-recommendator.appspot.com/BlazBlue-Continuum-Shift-Cover.jpg,X,,,X,X,,X,,,,
-BlazBlue: Continuum Shift II,2012,Data/BlazBlue: Continuum Shift II.csv,https://storage.googleapis.com/fgc-recommendator.appspot.com/BlazBlue-Continuum-Shift-II-Cover.jpg,X,,,X,X,,X,,,,
-BlazBlue: Continuum Shift Extend,2012,Data/BlazBlue: Continuum Shift Extend.csv,https://storage.googleapis.com/fgc-recommendator.appspot.com/BlazBlue-Continuum-Shift-Extend-Cover.jpg,X,,,X,X,,X,,,,
-BlazBlue: Chrono Phantasma,2012,Data/BlazBlue: Chrono Phantasma.csv,https://storage.googleapis.com/fgc-recommendator.appspot.com/BlazBlue-Chrono-Phantasma-Cover.png,X,,,X,X,,X,,,,
-BlazBlue: Chrono Phantasma Extend,2012,Data/BlazBlue: Chrono Phantasma Extend.csv,https://storage.googleapis.com/fgc-recommendator.appspot.com/BlazBlue-Chrono-Phantasma-Extend-Cover.jpg,X,,,X,X,,X,,,,
-BlazBlue: Central Fiction,2012,Data/BlazBlue: Central Fiction.csv,https://storage.googleapis.com/fgc-recommendator.appspot.com/BlazBlue-Central-Fiction-Cover.jpg,X,,,X,X,,X,,,,
-BlazBlue: Cross Tag Battle,2012,Data/BlazBlue: Cross Tag Battle.csv,https://storage.googleapis.com/fgc-recommendator.appspot.com/BlazBlue-Cross-Tag-Battle-Cover.jpg,X,,X,X,X,,X,,,,X
-Cyberbots: Fullmetal Madness,2012,Data/Cyberbots: Fullmetal Madness.csv,https://storage.googleapis.com/fgc-recommendator.appspot.com/Cyberbots-Fullmetal-Madness-Cover.png,X,,,X,,,,,,,
+BlazBlue Calamity Trigger,2012,Data/BlazBlue: Calamity Trigger.csv,https://storage.googleapis.com/fgc-recommendator.appspot.com/BlazBlue-Calamity-Trigger-Cover.jpg,X,,,X,X,,X,,,,
+BlazBlue Continuum Shift,2012,Data/BlazBlue: Continuum Shift.csv,https://storage.googleapis.com/fgc-recommendator.appspot.com/BlazBlue-Continuum-Shift-Cover.jpg,X,,,X,X,,X,,,,
+BlazBlue Continuum Shift II,2012,Data/BlazBlue: Continuum Shift II.csv,https://storage.googleapis.com/fgc-recommendator.appspot.com/BlazBlue-Continuum-Shift-II-Cover.jpg,X,,,X,X,,X,,,,
+BlazBlue Continuum Shift Extend,2012,Data/BlazBlue: Continuum Shift Extend.csv,https://storage.googleapis.com/fgc-recommendator.appspot.com/BlazBlue-Continuum-Shift-Extend-Cover.jpg,X,,,X,X,,X,,,,
+BlazBlue Chrono Phantasma,2012,Data/BlazBlue: Chrono Phantasma.csv,https://storage.googleapis.com/fgc-recommendator.appspot.com/BlazBlue-Chrono-Phantasma-Cover.png,X,,,X,X,,X,,,,
+BlazBlue Chrono Phantasma Extend,2012,Data/BlazBlue: Chrono Phantasma Extend.csv,https://storage.googleapis.com/fgc-recommendator.appspot.com/BlazBlue-Chrono-Phantasma-Extend-Cover.jpg,X,,,X,X,,X,,,,
+BlazBlue Central Fiction,2012,Data/BlazBlue: Central Fiction.csv,https://storage.googleapis.com/fgc-recommendator.appspot.com/BlazBlue-Central-Fiction-Cover.jpg,X,,,X,X,,X,,,,
+BlazBlue Cross Tag Battle,2012,Data/BlazBlue: Cross Tag Battle.csv,https://storage.googleapis.com/fgc-recommendator.appspot.com/BlazBlue-Cross-Tag-Battle-Cover.jpg,X,,X,X,X,,X,,,,X
+Cyberbots Fullmetal Madness,2012,Data/Cyberbots: Fullmetal Madness.csv,https://storage.googleapis.com/fgc-recommendator.appspot.com/Cyberbots-Fullmetal-Madness-Cover.png,X,,,X,,,,,,,
 Figtning Vipers,2012,Data/Figtning Vipers.csv,https://storage.googleapis.com/fgc-recommendator.appspot.com/Figtning-Vipers-Cover.jpg,,X,,,,,,,,,
-X-Men: Children of the Atom,2012,Data/X-Men: Children of the Atom.csv,,X,,,X,,,X,,,,
+X-Men Children of the Atom,2012,Data/X-Men: Children of the Atom.csv,,X,,,X,,,X,,,,
 Marvel Super Heroes,2012,Data/Marvel Super Heroes.csv,https://storage.googleapis.com/fgc-recommendator.appspot.com/Marvel-Super-Heroes-Cover.jpg,X,,X,X,,,X,,,,
 M.U.G.E.N,2012,Data/M.U.G.E.N.csv,https://storage.googleapis.com/fgc-recommendator.appspot.com/M.U.G.E.N-Cover.jpg,X,,,X,,,,,,,
 Super Gem Fighter Mini Mix,2012,Data/Super Gem Fighter Mini Mix.csv,https://storage.googleapis.com/fgc-recommendator.appspot.com/Super-Gem-Fighter-Mini-Mix-Cover.jpg,X,,,,,,,,,,
 Pocket Fighter,2012,Data/Pocket Fighter.csv,https://storage.googleapis.com/fgc-recommendator.appspot.com/Pocket-Fighter-Cover.jpg,X,,,,,,,,,,
 Namco X Capcom,2012,Data/Namco X Capcom.csv,https://storage.googleapis.com/fgc-recommendator.appspot.com/Namco-X-Capcom-Cover.jpg,X,,,,,,,,,,
-Tatsunoko Vs Capcom: Ultimate All-Stars,2012,Data/Tatsunoko Vs Capcom: Ultimate All-Stars.csv,,X,,X,X,X,,,,,,X
+Tatsunoko Vs Capcom Ultimate All-Stars,2012,Data/Tatsunoko Vs Capcom: Ultimate All-Stars.csv,,X,,X,X,X,,,,,,X
 Primal Rage,2012,Data/Primal Rage.csv,https://storage.googleapis.com/fgc-recommendator.appspot.com/Primal-Rage-Cover.jpg,X,,,,,,,,X,,
 Figthing EX Layer,2012,Data/Figthing EX Layer.csv,https://storage.googleapis.com/fgc-recommendator.appspot.com/Figthing-EX-Layer-Cover.jpg,X,,,,,,,,,,X
 DNF Duel,2012,Data/DNF Duel.csv,https://storage.googleapis.com/fgc-recommendator.appspot.com/DNF-Duel-Cover.jpg,X,,,,X,,X,,,,
-Tatsunko Vs Capcom: Cross Generation of Heroes,2012,Data/Tatsunko Vs Capcom: Cross Generation of Heroes.csv,https://storage.googleapis.com/fgc-recommendator.appspot.com/Tatsunko-Vs-Capcom-Cross-Generation-of-Heroes-Cover.png,X,,X,X,X,,,,,,X
+Tatsunko Vs Capcom Cross Generation of Heroes,2012,Data/Tatsunko Vs Capcom: Cross Generation of Heroes.csv,https://storage.googleapis.com/fgc-recommendator.appspot.com/Tatsunko-Vs-Capcom-Cross-Generation-of-Heroes-Cover.png,X,,X,X,X,,,,,,X
 Tatsunoko Fighting,2012,Data/Tatsunoko Fighting.csv,https://storage.googleapis.com/fgc-recommendator.appspot.com/Tatsunoko-Fighting-Cover.jpg,X,,,,X,,,,,,
-Power Rangers: Battle for the Grid,2012,Data/Power Rangers: Battle for the Grid.csv,https://storage.googleapis.com/fgc-recommendator.appspot.com/Power-Rangers-Battle-for-the-Grid-Cover.jpg,X,,,,X,,,,,,
+Power Rangers Battle for the Grid,2012,Data/Power Rangers: Battle for the Grid.csv,https://storage.googleapis.com/fgc-recommendator.appspot.com/Power-Rangers-Battle-for-the-Grid-Cover.jpg,X,,,,X,,,,,,
