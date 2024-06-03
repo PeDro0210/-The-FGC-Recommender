@@ -1,9 +1,10 @@
 use actix_web::{get, web::{self, Json}, HttpResponse, Responder};
 use serde_json::Value;
 use crate::api::query_manager;
-use crate::api::utils::queries_structs_endpoint::{Game, Character,PathInfo};
+use crate::api::utils::queries_structs_endpoint::{Game, PathInfo};
 use crate::api::questions_manager::question_reader::read_schema;
 // In charge of parsing the HTTP requests and sending the responses
+
 
 #[get("/GetQuestions")]
 pub async fn question_sender() -> impl Responder {

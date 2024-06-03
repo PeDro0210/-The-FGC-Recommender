@@ -6,6 +6,7 @@ import { useEffect, useState} from 'react';
 
 export default function Questions({handlerpasco}) {   //inside joke  
     // JSON object that will contain the categories and the points that it gives to that category
+    
     let QuestionCategories = {
         "Categories":["2D","3D","TagTeam","AirDashers","Anime","WeaponBased","Fast-paced","Footsies","SlowPaced","Installbased","CrossOver"],   
         "Points":[0,0,0,0,0,0,0,0,0,0,0]
@@ -24,7 +25,6 @@ export default function Questions({handlerpasco}) {   //inside joke
     const [QuestionList, setQuestionList]  = useState([]);
     
 
-
     // Fetching the data
     useEffect(() => {
         fetch(`http://127.0.0.1:8080/GetQuestions`)
@@ -42,9 +42,6 @@ export default function Questions({handlerpasco}) {   //inside joke
     * @param (Category) - String that contains the category that the question corresponds to
     * @param (Points) - Integer that contains the points that the question corresponds to
     */
-    // Will recieve a list
-
-    // TODO: Apply the function in to the JSX :D (Ya funciona :D )
     const PointAdder = (Categories) => { 
         for (let i = 0; i < Categories.length; i++) {
             if (QuestionCategories["Categories"].includes(Categories[i])) {
