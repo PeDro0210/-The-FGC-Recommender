@@ -4,7 +4,7 @@ use serde::Deserialize;
 #[derive(Debug)]
 pub struct Character{
     pub name : String,
-    pub image_url: String
+    pub search_link: String
 }
 
 #[derive(serde::Serialize)]

@@ -70,12 +70,13 @@ const ResultsContainer = ({gameslist, archetypeslist}) => {
                         <Slider {...sliderSettings}>
                             {game.characters.map((character, charIndex) => (
                                 <div key={charIndex}>
-                                    <ImageBox
-                                        image={character.image_url}
+                                    {/* TODO: Change to the Button for the characters */}
+                                    {/* <ImageBox
+                                        image={character.search_link}
                                         NumberOfImage={charIndex + 1}
                                         Name={character.name}
                                         Size={'60%'}
-                                    />
+                                    /> */}
                                 </div>
                             ))}
                         </Slider>

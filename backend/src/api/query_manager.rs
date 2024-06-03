@@ -126,7 +126,7 @@ pub async fn fetching_characters(game_name: String, archetypes: Vec<String>) -> 
     // Is just to simple to over explain
     let mut result = graph.execute(query("
         MATCH (u:Character)-[:From]->(t:Reconode{name:$game})
-        RETURN u.name
+        RETURN u.name, u.search_link
         ORDER BY rand()
         LIMIT 5
             ")
@@ -142,7 +142,8 @@ pub async fn fetching_characters(game_name: String, archetypes: Vec<String>) -> 
                     // Object structure for characters, with there keys for getting the info
                     let character = Character {
                         name: result.get::<String>("u.name").unwrap(),
-                        image_url: String::from("https://cdn.discordapp.com/attachments/1226420773129031710/1243064192521474108/1024px-HD_transparent_picture.png?ex=66501d3e&is=664ecbbe&hm=6335195df1d578d4fcb034f0e8d7ddb83286b35c8c2725f91fe8813dae474c25&"), //Once they are tabulated, change to the value of the image_url
+                        // ** This goes below:result.get::<String>("search_link").unwrap()
+                        search_link: result.get::<String>("u.search_link").unwrap()
                     };
                     character_vec.push(character);
                 },
