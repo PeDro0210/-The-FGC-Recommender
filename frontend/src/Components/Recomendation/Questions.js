@@ -2,7 +2,7 @@ import "../../styles/Recomendations/Questions/Question.css";
 import { QuestionBox } from '../../Components/Recomendation/SubComponents/QuestionBox';
 import { useEffect, useState} from 'react';
 
-
+// TODO: OPTMIZE ALL THE LOOPS
 
 export default function Questions({handlerpasco}) {   //inside joke  
     // JSON object that will contain the categories and the points that it gives to that category
@@ -19,10 +19,8 @@ export default function Questions({handlerpasco}) {   //inside joke
     let Categories = [];
 
     let Archetypes = [];
-    
 
     const [QuestionList, setQuestionList]  = useState([]);
-    
 
 
     // Fetching the data
@@ -59,7 +57,24 @@ export default function Questions({handlerpasco}) {   //inside joke
         }
     }
 
+    const CheckIfAllSelected = () => {
+        for (let i = 1; i < 3; i++) {
+            const Name = "radio" + i
+            var ele = document.getElementsByName(Name);
+            for (var j = 0; j < ele.length; j++) {
+                if (ele[j].checked) {
+                    return true
+                }
+            }
+        }
+        return false
+    }
     function getAnswears(){
+        if (!CheckIfAllSelected()) {
+            // TODO: change this to a pop up, not an alert
+            alert("Please select an answear for all the questions")
+            return
+        }
         const answears1 = []
         for (let i = 1; i < 3; i++) {
             const Name = "radio" + i

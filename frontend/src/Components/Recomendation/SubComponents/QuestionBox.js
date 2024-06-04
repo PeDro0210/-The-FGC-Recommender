@@ -20,7 +20,12 @@ import "../../../styles//Recomendations/Questions/QuestionBox.css";
 
 export function QuestionBox({Answear, PointsAdder, Question, Number}) {
     const Name = "radio" + Number
-
+    const CheckIfSelected = () => {
+        if (document.querySelector('input[name="'+Name+'"]:checked') != null) {
+            return true
+        }
+        return false
+    }
     return (
         <div>
             <div className="Question">

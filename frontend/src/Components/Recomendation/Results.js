@@ -1,6 +1,6 @@
 import React from 'react';
 import Slider from 'react-slick';
-import { ImageBox } from './SubComponents/ImageBox';
+import { CharacterBox } from './SubComponents/CharacterBox';
 import "../../styles/Recomendations/Results/ResultContainer.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -71,17 +71,17 @@ const ResultsContainer = ({gameslist, archetypeslist}) => {
                             {game.characters.map((character, charIndex) => (
                                 <div key={charIndex}>
                                     {/* TODO: Change to the Button for the characters */}
-                                    {/* <ImageBox
-                                        image={character.search_link}
+                                    <CharacterBox
+                                        HyperLink={character.search_link}
                                         NumberOfImage={charIndex + 1}
                                         Name={character.name}
                                         Size={'60%'}
-                                    /> */}
+                                    />
                                 </div>
                             ))}
                         </Slider>
                     ) : (
-                        <p>No hay personajes para este juego</p>
+                        <p>Characters for some reason Didn't Load</p>
                     )}
                 </div>
             )
