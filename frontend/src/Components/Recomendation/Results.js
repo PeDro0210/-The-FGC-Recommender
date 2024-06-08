@@ -41,15 +41,18 @@ const ResultsContainer = ({gameslist, archetypeslist}) => {
     const [games, setGameList]  = useState([]);
     const [loading, setLoading] = useState(true);
     useEffect(() => {
-        fetch(`http://127.0.0.1:8080/GetGames/`+gameslist+`/`+archetypeslist)
-        .then(response => response.json())
-        .then(data => {
-            setGameList(data);
-            setLoading(false);
-        })
-        .catch(error => {
-          console.log(error);
-        });
+        const fetchData = async () => {
+            try {
+                const response = await fetch(`http://127.0.0.1:8080/GetGames/${gameslist}/${archetypeslist}`);
+                const data = await response.json();
+                setGameList(data);
+                setLoading(false);
+            } catch (error) {
+                console.log(error);
+            }
+        };
+
+        fetchData();
     }, []);
 
     const RestartPage = () => {
