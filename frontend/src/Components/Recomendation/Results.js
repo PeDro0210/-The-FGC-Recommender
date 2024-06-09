@@ -43,10 +43,12 @@ const ResultsContainer = ({gameslist, archetypeslist}) => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await fetch(`http://127.0.0.1:8080/GetGames/${gameslist}/${archetypeslist}`);
-                const data = await response.json();
-                setGameList(data);
-                setLoading(false);
+                if (games.length == 0){
+                    const response = await fetch(`http://127.0.0.1:8080/GetGames/${gameslist}/${archetypeslist}`);
+                    const data = await response.json();
+                    setGameList(data);
+                    setLoading(false);
+                }
             } catch (error) {
                 console.log(error);
             }
