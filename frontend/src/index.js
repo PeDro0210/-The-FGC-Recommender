@@ -5,11 +5,8 @@ import RecomendationPage from './Pages/RecomendationPage';
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-// TODO: Add routing for Login, Register pages, RecomendationPage and UserPage
-root.render(
-  <React.StrictMode>
-    <RecomendationPage />
-  </React.StrictMode>
+root.render( //FUCK Strict mode
+  <RecomendationPage />
 );
 
 // If you want to start measuring performance in your app, pass a function

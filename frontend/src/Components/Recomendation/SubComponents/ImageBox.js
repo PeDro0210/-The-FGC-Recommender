@@ -15,33 +15,33 @@ export function ImageBox({ image, NumberOfImage, Name, Size }) { // the TypeOfBo
         <>
             <div className="image-container">
                 {/* |===========================================================| <- limit of the box
-                |                                                           |
-                |                                                           |
-                |                                                           |
-                |                                                           |
-                |                                                           |
-                |                                                           |
-                |                                                           |
-                |                                                           |
-                |                                                           |
-                |                                                           |
-                |                                                           |
-                |                                                           |
-                |                                                           | <- This box would be larger (larger than the width)
-                |===========================================================| <- end of the box */}
+                    |                                                           |
+                    |                                                           |
+                    |                                                           |
+                    |                                                           |
+                    |                                                           |
+                    |                                                           |
+                    |                                                           |
+                    |                                                           |
+                    |                                                           |
+                    |                                                           |
+                    |                                                           |
+                    |                                                           |
+                    |                                                           | <- This box would be larger (larger than the width)
+                    |===========================================================| <- end of the box */}
+                    
+                    {image && <img src={image} alt={"Image" + NumberOfImage} style={{ width: Size }} />} {/* The image will be centered and will be 75% of the box */}
+                    
+                </div>
 
-                <img src={image} alt={"Image" + NumberOfImage} style={{ width: Size }} /> {/* The image will be centered and will be 75% of the box */}
-
-            </div>
-
-            <div className="name-container">
-                {/* 
-                |===========================================================| <- Where the box ends and the name of the image starts
-                |                                                           |
-                |                                                           | <- The name of the image centered and with the same font as the the QuestionPageHeader
-                |                                                           |
-                |===========================================================| <- end of the box
-                */}
+                            <div className="name-container">
+                                {/* 
+                                |===========================================================| <- Where the box ends and the name of the image starts
+                                |                                                           |
+                                |                                                           | <- The name of the image centered and with the same font as the the QuestionPageHeader
+                                |                                                           |
+                                |===========================================================| <- end of the box
+                                */}
                 <p className="name">{Name}</p>
             </div>
         </>
