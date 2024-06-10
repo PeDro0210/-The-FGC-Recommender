@@ -10,6 +10,7 @@ async fn driver_starting() {
     print!("{:?}", driver.execute(query("RETURN 0")).await.is_ok());
     assert_eq!(driver.execute(query("RETURN 0")).await.is_ok(), true);
 }
+
 // ** Commented cause the public functions are set to private
 // for some reason this test is not executing
 // #[tokio::test]

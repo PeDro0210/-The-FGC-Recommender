@@ -121,7 +121,6 @@ async fn jaccard_similarity_query(userhash: String, archetypes: Vec<String>) -> 
 pub async fn fetching_characters(game_name: String, archetypes: Vec<String>) -> Vec<Character> { //returns vec of characters
     let graph = start_driver().await;
     let mut character_vec:Vec<Character> = Vec::new();
-    let game_name_clone = game_name.clone(); // For the search link
 
     // Simple ass query
     // Is just to simple to over explain
@@ -140,12 +139,10 @@ pub async fn fetching_characters(game_name: String, archetypes: Vec<String>) -> 
             let result = result.next().await.unwrap(); //I know this is mutable, but fucking rust-analyzer doesnt say so
             match result {
                 Some(result) => {
-                    // Object structure for characters, with there keys for getting the info
-                    println!("{}", result.get::<String>("u.name").unwrap());
                     let character = Character {
                         name: result.get::<String>("u.name").unwrap(),
                         //This is a bad Idea, but meh it works IG
-                        search_link: "https://www.google.com/search?q=".to_string()+&result.get::<String>("u.name").unwrap() + "%20"+ &game_name_clone +"%20"+ "characterSuperWikiCombo", // Use the cloned game_name variable
+                        search_link: result.get::<String>("u.search_link").unwrap()
                     };
                     character_vec.push(character);
                 },

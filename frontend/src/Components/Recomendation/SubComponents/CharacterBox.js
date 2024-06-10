@@ -21,7 +21,7 @@ export function CharacterBox({ HyperLink, NumberOfImage, Name, Size }) { // the 
                 |                                                           |
                 |===========================================================| <- end of the box
                 */}
-                <a href={HyperLink} className="name" target="_blank">{Name}</a>
+                <a href={HyperLink} className="name" target="_blank">{Name}</a> {/*TODO: Unsafe Asf*/} 
             </div>
         </>
     )

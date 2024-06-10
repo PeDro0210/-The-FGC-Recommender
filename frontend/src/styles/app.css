@@ -153,6 +153,8 @@
     position: relative;
     background: linear-gradient(to top, #0d0d0d, #262335);
     opacity: 0.8;
+    display: flex;
+    flex-direction: column;
     h1 {
         filter: contrast(1.2) brightness(0.8) saturate(1.5) hue-rotate(10deg);
         opacity: 1;

@@ -6,18 +6,19 @@
     border: 0px ;
     margin: auto;
     margin-bottom: 5%;
+  
 }   
 
 .button {
     background-color: #008891;
     border: none;
     color: #E7E7DE;
-    padding: 16px 40px;
+    padding: 16vw 40vw;
     text-align: center;
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
-    margin: 4px 2px;
+    margin: 4vw 5vw;
     cursor: pointer;
     font-size: 20px;
     font: 900 2.5vw starbirlregular;

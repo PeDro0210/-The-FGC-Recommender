@@ -3,3 +3,4 @@ backend/target
 *.env
 backend/Cargo.lock
 DataRecollection
+Dockerfile
