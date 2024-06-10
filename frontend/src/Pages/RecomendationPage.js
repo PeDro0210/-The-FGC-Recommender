@@ -1,5 +1,6 @@
 import React from 'react';
 import "../styles/Recomendations/PageStyle.css";
+import "../styles/Recomendations/Questions/Question.css"
 import  Questions  from '../Components/Recomendation/Questions';
 import Results from '../Components/Recomendation/Results';
 import {useState} from 'react';
@@ -17,9 +18,9 @@ function RecomendationPage() {
         console.log(data);
       };
 
-  return (
-      <div className = "main-content">
-      
+return (
+    <div className = "main-content">
+    
         <div className="Header-one">
                 <div className="rounded-box">
                     <h1>The FGC Recommender</h1>
@@ -30,19 +31,17 @@ function RecomendationPage() {
                 {/* Intregate the Image Container */}
                 {AppGeneral.QuestionsInstance && <Questions handlerpasco={handleCategoriesData}/>}
                 {!AppGeneral.QuestionsInstance && <Results gameslist={AppGeneral.Categories} archetypeslist={AppGeneral.Archetype}/>}
-                       
+                     
         </div>
 
         <div className = "Footer-one">
-            {/* 
-                                        |-----------------------------------------------------------|<-here starts de footer
-                                        Maybe the README file and a donation button (no se preocupen de ese lado, yo de eso me encargare en el futuro)
-
-            */}
+            <button className="button" style={{ backgroundColor: 'rgba(0, 136, 145, 0.5)' }} onClick={() => window.open('https://github.com/PeDro0210')}>GitHub</button> {/*LMAO, I reused the button style cause I'm lazy asf*/}
+            <span style={{ marginRight: '5vw' }}></span> {/*Space Between buttons*/}
+            <button className="button" style={{ backgroundColor: 'rgba(0, 136, 145, 0.5)' }} onClick={() => window.open('https://paypal.me/pedroruben021?country.x=GT&locale.x=en_US')}>PayPal</button>
         </div>
-      
-      </div>
-  )
+    
+    </div>
+)
 }
 
 export default RecomendationPage;
